@@ -1,0 +1,638 @@
+
+  
+  /* Header de base */
+  .site-header {
+    position: relative;
+    z-index: 100;
+    background: var(--bg-color);
+    font-family: "Overpass", sans-serif;
+    width: 100%;
+    height: 8.438rem; /* 135px / 16 = 8.438rem */
+    max-width: 100vw; /* Pour éviter le débordement horizontal */
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    padding: 0 2rem;
+  }
+  
+  .site-logo .logo {
+    width: 7.334rem; /* 117.3408203125px / 16 = 7.334rem */
+    height: 2.26rem; /* 36.1572265625px / 16 = 2.26rem */
+    position: relative;
+    top: 3.163rem; /* 50.6px / 16 = 3.163rem */
+    left: 10.203rem; /* 163.25px / 16 = 10.203rem */
+    max-width: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsive Design pour le logo */
+  @media (max-width: 1200px) {
+    .site-logo .logo {
+      width: 6.5rem; /* Réduction progressive */
+      height: 2rem;
+      left: 8rem;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .site-logo .logo {
+      width: 6rem; /* 96px / 16 = 6rem */
+      height: 1.875rem; /* 30px / 16 = 1.875rem */
+      left: 6rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .site-logo .logo {
+      width: 5.5rem; /* 88px / 16 = 5.5rem */
+      height: 1.7rem; /* 27px / 16 = 1.7rem */
+      left: 4rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .site-logo .logo {
+      width: 5rem; /* 80px / 16 = 5rem */
+      height: 1.563rem; /* 25px / 16 = 1.563rem */
+      left: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .site-logo .logo {
+      width: 4.5rem; /* 72px / 16 = 4.5rem */
+      height: 1.4rem; /* 22px / 16 = 1.4rem */
+      left: 2rem;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .site-logo .logo {
+      width: 4rem; /* 64px / 16 = 4rem */
+      height: 1.25rem; /* 20px / 16 = 1.25rem */
+      left: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .site-logo .logo {
+      width: 3.5rem; /* 56px / 16 = 3.5rem */
+      height: 1.1rem; /* 18px / 16 = 1.1rem */
+      left: 1rem;
+    }
+  }
+  
+  /* Adaptation du container logo */
+  @media (max-width: 768px) {
+    .site-logo {
+      flex-shrink: 0; /* Empêche la compression */
+      z-index: 101;
+    }
+  }
+  
+  /* Orientation landscape sur mobile */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .site-logo .logo {
+      width: 4.5rem;
+      height: 1.4rem;
+      left: 2rem;
+    }
+  }
+  
+  /* iPhone SE et petits écrans */
+  @media (max-width: 375px) and (max-height: 667px) {
+    .site-logo .logo {
+      width: 3.75rem; /* 60px / 16 = 3.75rem */
+      height: 1.2rem; /* 19px / 16 = 1.2rem */
+      left: 1rem;
+    }
+  }
+  
+  /* Très petits écrans - Galaxy Fold, etc. */
+  @media (max-width: 280px) {
+    .site-logo .logo {
+      width: 3rem; /* 48px / 16 = 3rem */
+      height: 0.938rem; /* 15px / 16 = 0.938rem */
+      left: 0.5rem;
+    }
+  }
+  
+  /* Effet hover sur le logo */
+  
+  
+  /* Désactiver hover sur mobile */
+  
+  
+  
+  
+  /* Préservation des proportions */
+  @media (max-width: 768px) {
+    .site-logo .logo {
+      height: auto; /* Maintient les proportions */
+      max-height: 3rem; /* Limite la hauteur maximum */
+    }
+  }
+  
+  /* Checkbox caché pour le toggle */
+  #burger-toggle {
+    display: none;
+  }
+  
+  /* Menu burger button - Base */
+  .burger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 2.5rem; /* 40px / 16 = 2.5rem */
+    height: 2.5rem; /* Zone de clic carrée pour meilleure UX */
+    position: absolute;
+    top: 3.813rem; /* 61px / 16 = 3.813rem */
+    right: 12.5rem; /* 200px / 16 = 12.5rem (1920-1720=200) */
+    z-index: 1002;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsive Design pour burger-menu */
+  @media (max-width: 1200px) {
+    .burger-menu {
+      width: 2.5rem;
+      height: 2.5rem;
+      right: 3rem;
+      top: 0;
+  
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .burger-menu {
+      width: 2.25rem; /* 36px / 16 = 2.25rem */
+      height: 2.25rem;
+      right: 2.5rem;
+      top: 3rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .burger-menu {
+      width: 2.75rem; /* 44px / 16 = 2.75rem - Minimum touch target */
+      height: 2.75rem;
+      right: 1.5rem;
+      top: 2.5rem;
+      padding: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .burger-menu {
+      width: 2.75rem;
+      height: 2.75rem;
+      right: 1rem;
+      top: 2rem;
+      padding: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .burger-menu {
+      width: 2.5rem; /* 40px / 16 = 2.5rem */
+      height: 2.5rem;
+      right: 1rem;
+      padding: 0.375rem;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .burger-menu {
+      width: 2.25rem; /* 36px / 16 = 2.25rem */
+      height: 2.25rem;
+      right: 0.75rem;
+      padding: 0.25rem;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .burger-menu {
+      width: 2rem; /* 32px / 16 = 2rem */
+      height: 2rem;
+      right: 0.5rem;;
+      padding: 0.25rem;
+    }
+  }
+  
+  /* Adaptation de l'icône burger selon la taille */
+  @media (max-width: 768px) {
+    .burger-icon {
+      width: 1.25rem; /* 20px / 16 = 1.25rem */
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .burger-icon {
+      width: 1.125rem; /* 18px / 16 = 1.125rem */
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .burger-icon {
+      width: 1rem; /* 16px / 16 = 1rem */
+      height: auto;
+    }
+  }
+  
+  /* Touch devices - amélioration UX tactile */
+  @media (pointer: coarse) {
+    .burger-menu {
+      min-width: 2.75rem; /* 44px minimum pour touch target */
+      min-height: 2.75rem;
+    }
+    
+    .burger-menu:active {
+      transform: scale(0.95);
+    }
+  }
+  
+  /* Orientation landscape sur mobile */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .burger-menu {
+      top: 1.5rem;
+      right: 1.5rem;
+    }
+  }
+  
+  /* iPhone SE et petits écrans */
+  @media (max-width: 375px) and (max-height: 667px) {
+    .burger-menu {
+      right: 0.75rem;
+    }
+  }
+  
+  /* Masquer complètement le burger menu quand le dropdown est ouvert */
+  #burger-toggle:checked + .burger-menu {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* Supprimer les anciennes règles des burger-line */
+  .burger-line {
+    display: none;
+  }
+  
+  /* Menu fullscreen overlay */
+  .dropdown-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--menu-bg);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: hidden;
+  }
+  
+  #burger-toggle:checked ~ .dropdown-menu-overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .dropdown-menu-content {
+    padding: 2rem;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: flex-end;
+  }
+  
+  /* Header du menu fullscreen */
+  .menu-header {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 1003;
+  }
+  
+  .menu-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .menu-logo a {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--menu-text);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  
+  .close-menu {
+    cursor: pointer;
+    color: var(--menu-text);
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+  
+  
+  
+  .close-menu svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Sous-titre */
+  .menu-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 300;
+  }
+  
+  /* Navigation fullscreen - alignée à droite */
+  .dropdown-navigation {
+    width: 100%;
+    max-width: 600px;
+    margin-right: 2rem;
+  }
+  
+  .dropdown-nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+  
+  .dropdown-nav-menu li {
+    margin: 1.5rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .dropdown-nav-menu li a {
+    color: var(--menu-text);
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding: 0.3rem 0;
+    font-family: "Overpass", sans-serif;
+    text-align: right;
+    overflow: visible;
+  }
+  
+  /* Effet de surlignage au hover */
+  .dropdown-nav-menu li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  
+  .dropdown-nav-menu li a:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .dropdown-nav-menu li a:hover {
+    transform: translateX(-15px);
+  }
+  
+  /* Soulignement adapté à la largeur du texte */
+  .dropdown-nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color) 0%, #ff8a5c 100%);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+  
+  .dropdown-nav-menu li a:hover::after {
+    width: 100%;
+  }
+  
+  /* Conteneur pour centrer le texte à droite */
+  .dropdown-nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+  
+  .dropdown-nav-menu li {
+    margin: 1.5rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Animation en cascade quand le menu s'ouvre */
+  #burger-toggle:checked ~ .dropdown-menu-overlay .dropdown-nav-menu li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  #burger-toggle:checked ~ .dropdown-menu-overlay .dropdown-nav-menu li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  
+  #burger-toggle:checked ~ .dropdown-menu-overlay .dropdown-nav-menu li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  
+  #burger-toggle:checked ~ .dropdown-menu-overlay .dropdown-nav-menu li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  
+  #burger-toggle:checked ~ .dropdown-menu-overlay .dropdown-nav-menu li:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+  
+  #burger-toggle:checked ~ .dropdown-menu-overlay .dropdown-nav-menu li:nth-child(5) {
+    transition-delay: 0.5s;
+  }
+  
+  #burger-toggle:checked ~ .dropdown-menu-overlay .dropdown-nav-menu li:nth-child(6) {
+    transition-delay: 0.6s;
+  }
+  
+  /* Effet pour la page active avec soulignement */
+  .dropdown-nav-menu li.current-menu-item a::after,
+  .dropdown-nav-menu li.current_page_item a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+  }
+  
+  .dropdown-nav-menu li.current-menu-item a:hover,
+  .dropdown-nav-menu li.current_page_item a:hover {
+    transform: translateX(-15px);
+  }
+  
+  /* Cacher le menu de navigation classique */
+  .site-header .site-navigation {
+    display: none;
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 768px) {
+    .dropdown-menu-content {
+      padding: 3rem 4rem;
+    }
+    
+    .menu-header {
+      top: 3rem;
+      left: 4rem;
+      right: 4rem;
+    }
+    
+    .dropdown-navigation {
+      margin-right: 4rem;
+    }
+    
+    .dropdown-nav-menu li a {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .dropdown-menu-content {
+      padding: 0rem 6rem;
+    }
+    
+    .menu-header {
+      top: 4rem;
+      left: 6rem;
+      right: 6rem;
+    }
+    
+    .dropdown-navigation {
+      margin-right: 6rem;
+    }
+    
+    .dropdown-nav-menu li a {
+      font-size: rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dropdown-menu-content {
+      padding: 1.5rem;
+      align-items: flex-start;
+    }
+    
+    .menu-header {
+      top: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+    }
+    
+    .dropdown-navigation {
+      margin-right: 0;
+      margin-top: 4rem;
+    }
+    
+    .dropdown-nav-menu {
+      text-align: left;
+    }
+    
+    .dropdown-nav-menu li a {
+      font-size: 2.5rem;
+      text-align: left;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dropdown-menu-content {
+      padding: 1rem;
+    }
+    
+    .menu-logo a {
+      font-size: 1.3rem;
+    }
+    
+    .dropdown-nav-menu li a {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Amélioration de l'accessibilité */
+  @media (prefers-reduced-motion: reduce) {
+    .dropdown-menu-overlay,
+    .burger-line,
+    .dropdown-nav-menu li a,
+    .close-menu,
+    .dropdown-nav-menu li {
+      transition: none !important;
+      animation: none !important;
+    }
+    
+    .dropdown-nav-menu li {
+      opacity: 1;
+      transform: none;
+    }
+    
+    .dropdown-menu-overlay {
+      transform: none;
+    }
+  }
+  
+  /* Focus states pour l'accessibilité */
+  .burger-menu:focus,
+  .close-menu:focus {
+    outline-offset: 2px;
+  }
+  
+  .dropdown-nav-menu li a:focus {
+    outline-offset: 2px;
+  }

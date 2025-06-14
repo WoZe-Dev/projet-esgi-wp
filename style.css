@@ -1,0 +1,10 @@
+:root {
+    --primary-color: #2d1b69;
+    --text-color: #333;
+    --bg-color: #fff;
+    --light-grey: #f0f0f0;
+    --menu-bg: #050A3A;
+    --menu-text: #ffffff;
+    --accent-color: #ff6b9d;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
