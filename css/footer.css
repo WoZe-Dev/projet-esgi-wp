@@ -1,0 +1,156 @@
+.site-footer {
+    background-color: #1a1b3a;
+    color: white;
+    width: 120rem;
+    height: 24.8125rem;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.container-fluid {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.footer-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.footer-logo {
+    position: absolute;
+    width: 14.583rem;
+    height: 4.375rem;
+    top: 4.6875rem;
+    left: 9.625rem;
+}
+
+.footer-logo h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-copyright {
+    position: absolute;
+    width: 32.125rem;
+    height: 1.25rem;
+    top: 18.5rem;
+    left: 9.9375rem;
+}
+
+.footer-copyright p {
+    font-size: 0.875rem;
+    color: #a8a8a8;
+    margin: 0;
+}
+
+.contact-manager {
+    position: absolute;
+    width: 11.4375rem;
+    height: 8.5625rem;
+    top: 5.625rem;
+    left: 81.375rem;
+    text-align: right;
+}
+
+.contact-ceo {
+    position: absolute;
+    width: 11.4375rem;
+    height: 8.5625rem;
+    top: 5.625rem;
+    left: 98.6875rem;
+    text-align: right;
+}
+
+.contact-manager h4,
+.contact-ceo h4 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: white;
+    margin: 0 0 1rem 0;
+}
+
+.contact-manager p,
+.contact-ceo p {
+    font-size: 1rem;
+    color: #a8a8a8;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.footer-social {
+    position: absolute;
+    bottom: 4rem;
+    right: 9rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+
+.footer-social img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(0) invert(1); /* Pour rendre les SVG blancs */
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .site-footer {
+        width: 100%;
+        height: auto;
+        padding: 2rem 0;
+    }
+    
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .footer-logo,
+    .footer-copyright,
+    .contact-manager,
+    .contact-ceo,
+    .footer-social {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        width: auto;
+        height: auto;
+    }
+    
+    .footer-contacts {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+    }
+    
+    .footer-social {
+        margin-top: 1rem;
+    }
+}
