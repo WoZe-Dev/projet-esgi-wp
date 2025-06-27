@@ -1,0 +1,195 @@
+/* Identity Card Styles */
+.identity-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.identity-card h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 20px 0 10px;
+}
+
+.identity-card h2 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.professional-tagline {
+    font-family: 'Muli', sans-serif;
+    font-size: 5.25rem;
+    color: #050A3A;
+    width: 72.25rem;
+    position: relative;
+    left: 12rem;
+}
+
+
+.identity-image {
+    width: 92.9375rem;
+    height: 39.4375rem;
+    position: relative;
+    left: 27.0625rem;
+}
+
+.about-us-heading {
+       position: relative;
+       left: 434px;
+      
+   }
+
+.img2{
+    margin-right: 1rem;
+
+   }
+
+
+
+
+
+.mask{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+}
+
+
+.section-title {
+    font-family: 'Muli', sans-serif;
+    font-size: 47px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: #050A3A;
+    width: 57.125rem;
+}
+
+.who-are-we-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 20px 0 10px;
+}
+
+
+.about-us-content {
+    position: relative;
+    left: 846px;
+    right: 782px;
+    top: -56rem;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.3rem;
+    line-height: 2.625rem;
+    color: #8A8A8A;
+    width: 40rem;
+}
+
+
+.about-us-content {
+    position: relative;
+    left: 846px;
+    right: 782px;
+    top: -56rem;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.3rem;
+    line-height: 2.625rem;
+    color: #8A8A8A;
+    width: 40rem;
+}
+
+
+.our-services-heading {
+    font-family: 'Muli', sans-serif;
+    font-weight: 600;
+    font-size: 63px;
+    line-height: 100%;
+    letter-spacing: 3px;
+    width: 406px;
+    height: 79px;
+    color: #050A3A;
+    position: absolute;
+    top: 2900px;
+    left: 100px;
+}
+
+/* Service Images - Layout horizontal */
+.service-image-12 {
+
+    top: 3047px;
+    left: 100px;
+    position: absolute;
+}
+
+.service-image-11 {
+    top: 3047px;
+    left: 560px;
+    position: absolute;
+}
+
+.service-image-3 {
+    width: 380px;
+    height: 380px;
+    top: 3047px;
+    left: 1020px;
+    position: absolute;
+}
+
+.private-parties-text {
+    font-family: 'Muli', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    width: 242px;
+    height: 44px;
+    color: #050A3A;
+    position: absolute;
+    cursor: pointer;
+    top: 3450px;
+    left: 629px;
+    text-align: center;
+}
+
+.private-parties-text:hover {
+    font-family: 'Muli', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    width: 242px;
+    height: 44px;
+    color: #050A3A;
+}
+
+/* Gradient Rectangle under text */
+.private-parties-text::after {
+    content: '';
+    background: linear-gradient(90deg, #FFD0A8 0%, #FF4FC0 100%);
+    width: 240px;
+    height: 5px;
+    position: absolute;
+    top: 50px;
+    left: 1px;
+    display: block;
+}
+
+
+.services{
+    margin-top: 20rem;
+}
+
+
+

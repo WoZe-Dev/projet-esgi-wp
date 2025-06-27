@@ -1,9 +1,8 @@
 <?php get_header(); ?>
 
 <main class="search-results page">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
+    
+
                 <h1>Résultats de la recherche pour "<?php echo get_search_query(); ?>"</h1>
 
                 <?php
@@ -59,9 +58,8 @@
                     <p>Aucun résultat trouvé.</p>
                 <?php endif; ?>
 
-            </div>
-        </div>
-    </div>
+           
+
 </main>
 
 <?php get_footer(); ?>

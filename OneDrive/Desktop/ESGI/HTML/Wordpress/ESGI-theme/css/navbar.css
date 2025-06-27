@@ -158,7 +158,7 @@
     width: 2.5rem; /* 40px / 16 = 2.5rem */
     height: 2.5rem; /* Zone de clic carrée pour meilleure UX */
     position: absolute;
-    top: 3.813rem; /* 61px / 16 = 3.813rem */
+    top: 2.813rem; /* 61px / 16 = 3.813rem */
     right: 12.5rem; /* 200px / 16 = 12.5rem (1920-1720=200) */
     z-index: 1002;
     transition: all 0.3s ease;

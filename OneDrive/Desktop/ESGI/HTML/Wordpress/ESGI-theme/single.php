@@ -5,8 +5,7 @@ get_header();
 
 <main class="post">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
+
                 <h1><?php the_title() ?></h1>
                 <div class="post-meta">
                     <div class="post-author">
@@ -43,8 +42,7 @@ get_header();
                 }
                 ?>
             </div>
-        </div>
-    </div>
+
 </main>
 
 
