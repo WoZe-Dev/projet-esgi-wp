@@ -2,8 +2,7 @@
 
 <main class="error-404 page">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
+    
                 <h1>404</h1>
                 <p>Page introuvable</p>
                 <p>Essayez de faire une recherche</p>
@@ -18,8 +17,7 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
+
 </main>
 
 <?php get_footer(); ?>

@@ -28,11 +28,20 @@ function esgi_theme_styles() {
         filemtime(get_template_directory() . '/css/navbar.css') // Version basée sur la date de modification
     );
 
+    // Fichier CSS footer
     wp_enqueue_style(
         'esgi-footer-style', 
         get_template_directory_uri() . '/css/footer.css',
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/footer.css') // Version basée sur la date de modification
+    );
+
+    // Fichier CSS home
+    wp_enqueue_style(
+        'esgi-home-style', 
+        get_template_directory_uri() . '/css/home.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/home.css') // Version basée sur la date de modification
     );
 }
 add_action('wp_enqueue_scripts', 'esgi_theme_styles');
@@ -71,10 +80,19 @@ function esgi_getIcon($name)
 add_action('customize_register', 'esgi_customize_register');
 function esgi_customize_register($wp_customize)
 {
+    // Section principale
     $wp_customize->add_section('esgi_params', [
         'title' => __('Réglages ESGI', 'ESGI'),
         'description' => __('Faites-vous plaisir :)', 'ESGI'),
         'priority' => 1,
+        'capability' => 'edit_theme_options',
+    ]);
+
+    // Section Home
+    $wp_customize->add_section('esgi_home', [
+        'title' => __('Page d\'accueil', 'ESGI'),
+        'description' => __('Paramètres de la page d\'accueil', 'ESGI'),
+        'priority' => 2,
         'capability' => 'edit_theme_options',
     ]);
 
@@ -164,6 +182,131 @@ function esgi_customize_register($wp_customize)
         'section' => 'esgi_params',
         'label' => __('Afficher tous les titres en majuscules', 'ESGI'),
     ]);
+
+    // Paramètres de la page d'accueil
+    $wp_customize->add_setting('home_hero_title', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => 'Welcome to our agency',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ]);
+    
+    $wp_customize->add_control('home_hero_title', [
+        'type' => 'text',
+        'priority' => 1,
+        'section' => 'esgi_home',
+        'label' => __('Titre principal', 'ESGI'),
+    ]);
+
+    $wp_customize->add_setting('home_hero_subtitle', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => 'We craft beautiful digital experiences',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ]);
+    
+    $wp_customize->add_control('home_hero_subtitle', [
+        'type' => 'text',
+        'priority' => 2,
+        'section' => 'esgi_home',
+        'label' => __('Sous-titre', 'ESGI'),
+    ]);
+
+    $wp_customize->add_setting('home_hero_description', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_textarea_field'
+    ]);
+    
+    $wp_customize->add_control('home_hero_description', [
+        'type' => 'textarea',
+        'priority' => 3,
+        'section' => 'esgi_home',
+        'label' => __('Description', 'ESGI'),
+    ]);
+
+    $wp_customize->add_setting('home_hero_button_text', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => 'Get Started',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ]);
+    
+    $wp_customize->add_control('home_hero_button_text', [
+        'type' => 'text',
+        'priority' => 4,
+        'section' => 'esgi_home',
+        'label' => __('Texte du bouton', 'ESGI'),
+    ]);
+
+    $wp_customize->add_setting('home_hero_button_url', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '#',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'esc_url_raw'
+    ]);
+    
+    $wp_customize->add_control('home_hero_button_url', [
+        'type' => 'url',
+        'priority' => 5,
+        'section' => 'esgi_home',
+        'label' => __('URL du bouton', 'ESGI'),
+    ]);
+
+    // Services section
+    $wp_customize->add_setting('home_services_title', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => 'Our Services',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field'
+    ]);
+    
+    $wp_customize->add_control('home_services_title', [
+        'type' => 'text',
+        'priority' => 6,
+        'section' => 'esgi_home',
+        'label' => __('Titre des services', 'ESGI'),
+    ]);
+
+    // 3 services
+    for ($i = 1; $i <= 3; $i++) {
+        $wp_customize->add_setting('home_service_' . $i . '_title', [
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'default' => 'Service ' . $i,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field'
+        ]);
+        
+        $wp_customize->add_control('home_service_' . $i . '_title', [
+            'type' => 'text',
+            'priority' => 6 + $i,
+            'section' => 'esgi_home',
+            'label' => __('Service ' . $i . ' - Titre', 'ESGI'),
+        ]);
+
+        $wp_customize->add_setting('home_service_' . $i . '_description', [
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'default' => 'Description du service ' . $i,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'sanitize_textarea_field'
+        ]);
+        
+        $wp_customize->add_control('home_service_' . $i . '_description', [
+            'type' => 'textarea',
+            'priority' => 6 + $i + 3,
+            'section' => 'esgi_home',
+            'label' => __('Service ' . $i . ' - Description', 'ESGI'),
+        ]);
+    }
 }
 
 function esgi_sanitize_bool($value)

@@ -7,4 +7,23 @@
     --menu-text: #ffffff;
     --accent-color: #ff6b9d;
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
+}
+
+
+.text-large {
+    font-family: 'Muli', sans-serif;
+    font-size: 4.25rem;
+    color: #050A3A;
+    width: 72.25rem;
+}
+
+
+
+.text-description{
+  width: 57.125rem;
+    color: #8A8A8A;
+    font-family: 'Muli', sans-serif;
+    font-size: 1.625rem;
+    line-height: 2.625rem;
+
+}
