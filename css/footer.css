@@ -1,17 +1,21 @@
 .site-footer {
-    background-color: #1a1b3a;
+    background-color: #050a3a;
     color: white;
-    width: 120rem;
-    height: 24.8125rem;
+    width: 100%;
+    height: 397px;
     position: relative;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .container-fluid {
     width: 100%;
     height: 100%;
     position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .footer-content {
@@ -22,74 +26,162 @@
 
 .footer-logo {
     position: absolute;
-    width: 14.583rem;
-    height: 4.375rem;
-    top: 4.6875rem;
-    left: 9.625rem;
+    left: 115px;
+    top: 75px;
 }
 
 .footer-logo h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
     color: white;
     margin: 0;
     font-family: Arial, sans-serif;
+    letter-spacing: 2px;
 }
 
 .footer-copyright {
+    width: 26.77%;
+    height: 5.04%;
     position: absolute;
-    width: 32.125rem;
-    height: 1.25rem;
-    top: 18.5rem;
-    left: 9.9375rem;
+    right: 64.95%;
+    left: 8.28%;
+    bottom: 20.4%;
+    top: 74.56%;
 }
 
 .footer-copyright p {
-    font-size: 0.875rem;
-    color: #a8a8a8;
+    color: #ffffff;
+    text-align: left;
+    font-family: "DmSans-Regular", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    position: absolute;
+    right: 58.95%;
+    left: 0%;
+    width: 55.05%;
+    top: 50%;
+    transform: translateY(-50%);
     margin: 0;
 }
 
 .contact-manager {
+    width: 9.53%;
+    height: 34.51%;
     position: absolute;
-    width: 11.4375rem;
-    height: 8.5625rem;
-    top: 5.625rem;
-    left: 81.375rem;
-    text-align: right;
+    right: 22.66%;
+    left: 67.81%;
+    bottom: 42.82%;
+    top: 22.67%;
+    box-sizing: border-box;
+}
+
+.contact-manager h4 {
+    color: #ffffff;
+    text-align: left;
+    font-family: var(--heading-6-font-family, "Mulish-Bold", sans-serif);
+    font-size: var(--heading-6-font-size, 20px);
+    font-weight: var(--heading-6-font-weight, 700);
+    position: absolute;
+    right: 0%;
+    left: 53.01%;
+    width: 46.99%;
+    top: calc(50% - 61.5px);
+    margin: 0;
+}
+
+
+
+.contact-manager p:first-of-type {
+    color: #ffffff;
+    text-align: left;
+    font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+    font-size: var(--p20-font-size, 20px);
+    line-height: var(--p20-line-height, 38px);
+    font-weight: var(--p20-font-weight, 400);
+    position: absolute;
+    right: 0.55%;
+    left: 6.56%;
+    width: 139.9%;
+    top: calc(50% - 9.5px);
+    margin: 0;
+}
+
+.contact-manager p:last-of-type {
+    color: #ffffff;
+    text-align: left;
+    font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+    font-size: var(--p20-font-size, 20px);
+    line-height: var(--p20-line-height, 38px);
+    font-weight: var(--p20-font-weight, 400);
+    position: absolute;
+    right: 0.55%;
+    left: 25.68%;
+    width: 73.77%;
+    top: calc(50% + 30.5px);
+    margin: 0;
 }
 
 .contact-ceo {
+    width: 9.53%;
+    height: 34.51%;
     position: absolute;
-    width: 11.4375rem;
-    height: 8.5625rem;
-    top: 5.625rem;
-    left: 98.6875rem;
-    text-align: right;
+    right: 8.23%;
+    left: 82.24%;
+    bottom: 42.82%;
+    top: 22.67%;
+    box-sizing: border-box;
 }
 
-.contact-manager h4,
 .contact-ceo h4 {
-    font-size: 1.125rem;
-    font-weight: bold;
-    color: white;
-    margin: 0 0 1rem 0;
+    color: #ffffff;
+    text-align: left;
+    font-family: var(--heading-6-font-family, "Mulish-Bold", sans-serif);
+    font-size: var(--heading-6-font-size, 20px);
+    font-weight: var(--heading-6-font-weight, 700);
+    position: absolute;
+    right: 0%;
+    left: 77.05%;
+    width: 22.95%;
+    top: calc(50% - 61.5px);
+    margin: 0;
 }
 
-.contact-manager p,
-.contact-ceo p {
-    font-size: 1rem;
-    color: #a8a8a8;
-    margin: 0.5rem 0;
-    line-height: 1.4;
+.contact-ceo p:first-of-type {
+    color: #ffffff;
+    text-align: left;
+    font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+    font-size: var(--p20-font-size, 20px);
+    line-height: var(--p20-line-height, 38px);
+    font-weight: var(--p20-font-weight, 400);
+    position: absolute;
+    right: 0%;
+    left: 7.1%;
+    width: 132.9%;
+    top: calc(50% - 9.5px);
+    margin: 0;
+}
+
+.contact-ceo p:last-of-type {
+    color: #ffffff;
+    text-align: left;
+    font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+    font-size: var(--p20-font-size, 20px);
+    line-height: var(--p20-line-height, 38px);
+    font-weight: var(--p20-font-weight, 400);
+    position: absolute;
+    right: -0.55%;
+    left: 2.73%;
+    width: 97.81%;
+    top: calc(50% + 30.5px);
+    margin: 0;
 }
 
 .footer-social {
     position: absolute;
-    bottom: 4rem;
-    right: 9rem;
+    left: 79rem;
+    top: 297px;
     display: flex;
-    gap: 1rem;
+    gap: 15px;
     align-items: center;
 }
 
@@ -97,60 +189,398 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 20px;
+    height: 20px;
     color: white;
     text-decoration: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
+    transition: opacity 0.3s ease;
 }
 
-
-
-.footer-social img {
-    width: 100%;
-    height: 100%;
-    filter: brightness(0) invert(1); /* Pour rendre les SVG blancs */
+.footer-social a:hover {
+    opacity: 0.7;
 }
-
-
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .site-footer {
-        width: 100%;
         height: auto;
+        min-height: 400px;
         padding: 2rem 0;
+    }
+
+    .contact-manager p:last-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 19rem;
+    }
+
+    .contact-ceo p:last-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 15.5rem;
+    }
+
+    .contact-ceo p:first-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 12rem;
     }
     
     .footer-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 2rem;
-    }
-    
-    .footer-logo,
-    .footer-copyright,
-    .contact-manager,
-    .contact-ceo,
-    .footer-social {
+        display: block;
         position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        width: auto;
-        height: auto;
     }
     
-    .footer-contacts {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
+    .footer-logo {
+        position: static;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .footer-logo h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-manager,
+    .contact-ceo {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    
+    .contact-manager h4,
+    .contact-ceo h4 {
+        position: static;
+        width: 100%;
+        left: 0;
+        top: 0;
+        margin-bottom: 2.5rem;
+        text-align: center;
+    }
+    
+    .contact-manager p,
+    .contact-ceo p {
+        position: static;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+        margin: 0.3rem 0;
+    }
+    
+    .footer-copyright {
+        position: static;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin: 2rem 0 1rem 0;
+    }
+    
+    .footer-copyright p {
+        position: static;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+        transform: none;
     }
     
     .footer-social {
+        position: static;
+        left: 0;
+        top: 0;
+        justify-content: center;
         margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        min-height: 386px;
+        padding: 1.5rem 0;
+    }
+
+    .contact-manager p:last-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 19rem;
+    }
+
+    .contact-ceo p:last-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 15.5rem;
+    }
+    
+    .footer-logo h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-manager h4,
+    .contact-ceo h4 {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    
+
+    .contact-ceo p:first-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 12rem;
+    }
+
+    .contact-manager p:first-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 8rem;
+
+
+    }
+    
+    .contact-manager p,
+    .contact-ceo p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    .footer-copyright p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        min-height: 386px;
+        padding: 1rem 0;
+    }
+
+    .contact-manager p:last-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 19rem;
+    }
+
+    .contact-ceo p:last-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 15.5rem;
+    }
+
+    .contact-ceo p:first-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 12rem;
+    }
+    
+
+    .contact-manager p:first-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 8rem;
+
+
+    }
+    
+    .container-fluid {
+        padding: 0 1rem;
+    }
+    
+    .footer-logo h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .contact-manager h4,
+    .contact-ceo h4 {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .contact-manager p,
+    .contact-ceo p {
+        font-size: 0.9rem;
+    }
+    
+    .footer-copyright p {
+        font-size: 0.8rem;
+    }
+    
+    .footer-social a {
+        width: 25px;
+        height: 25px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .footer-logo h1 {
+        font-size: 1.6rem;
+    }
+
+    .contact-manager p:last-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 19rem;
+    }
+
+    .contact-ceo p:last-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 15.5rem;
+    }
+
+    .contact-ceo p:first-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 12rem;
+    }
+
+    .contact-manager p:first-of-type {
+        color: #ffffff;
+        text-align: center;
+        font-family: var(--p20-font-family, "Mulish-Regular", sans-serif);
+        font-size: var(--p20-font-size, 20px);
+        line-height: var(--p20-line-height, 38px);
+        font-weight: var(--p20-font-weight, 400);
+        position: absolute;
+        right: auto;
+        left: auto;
+        width: inherit;
+        top: 8rem;
+
+
+    }
+    
+    .contact-manager h4,
+    .contact-ceo h4 {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .contact-manager p,
+    .contact-ceo p {
+        font-size: 0.85rem;
+    }
+    
+    .footer-copyright p {
+        font-size: 0.75rem;
     }
 }

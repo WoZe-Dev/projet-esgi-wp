@@ -43,6 +43,13 @@ function esgi_theme_styles() {
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/home.css') // Version basée sur la date de modification
     );
+
+wp_enqueue_style(
+    'esgi-aboutus-style', 
+    get_template_directory_uri() . '/css/aboutus.css',
+    array('esgi-main-style'), // Dépendance du style principal
+    filemtime(get_template_directory() . '/css/aboutus.css') // Version basée sur la date de modification
+);
 }
 add_action('wp_enqueue_scripts', 'esgi_theme_styles');
 

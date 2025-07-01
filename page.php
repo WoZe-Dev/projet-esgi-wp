@@ -7,13 +7,14 @@ get_header();
 <main class="page">
     <div class="container">
 
-                <h1><?php the_title() ?></h1>
                 <div>
                     <?= the_content() ?>
                 </div>
+                <?php if (is_page('about-us')) include('template-parts/about-us.php'); ?>
 
     </div>
 </main>
 
 
 <?php get_footer() ?>
+

@@ -1,3 +1,4 @@
+/* Base Styles - Mobile First */
 /* Identity Card Styles */
 .identity-card {
     background: white;
@@ -34,39 +35,23 @@
     left: 12rem;
 }
 
-
 .identity-image {
-    width: 92.9375rem;
-    height: 39.4375rem;
+    width: 61.5rem;
+    height: 24.4375rem;
     position: relative;
     left: 27.0625rem;
 }
 
 .about-us-heading {
-       position: relative;
-       left: 434px;
-      
-   }
+    position: relative;
+    left: 434px;
+    width: 59rem;
+}
 
 .img2{
     margin-right: 1rem;
-
-   }
-
-
-
-
-
-.mask{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
+    margin-left: -1rem;
 }
-
 
 .section-title {
     font-family: 'Muli', sans-serif;
@@ -74,7 +59,7 @@
     line-height: 100%;
     letter-spacing: 0px;
     color: #050A3A;
-    width: 57.125rem;
+    width: 29.125rem;
 }
 
 .who-are-we-heading {
@@ -84,7 +69,6 @@
     margin: 20px 0 10px;
 }
 
-
 .about-us-content {
     position: relative;
     left: 846px;
@@ -94,49 +78,33 @@
     font-size: 1.3rem;
     line-height: 2.625rem;
     color: #8A8A8A;
-    width: 40rem;
+    width: 34rem;
 }
-
-
-.about-us-content {
-    position: relative;
-    left: 846px;
-    right: 782px;
-    top: -56rem;
-    font-family: 'Muli', sans-serif;
-    font-size: 1.3rem;
-    line-height: 2.625rem;
-    color: #8A8A8A;
-    width: 40rem;
-}
-
 
 .our-services-heading {
-    font-family: 'Muli', sans-serif;
-    font-weight: 600;
-    font-size: 63px;
-    line-height: 100%;
-    letter-spacing: 3px;
-    width: 406px;
-    height: 79px;
     color: #050A3A;
-    position: absolute;
-    top: 2900px;
-    left: 100px;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Mulish;
+    font-size: 63px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 3px;
 }
 
 /* Service Images - Layout horizontal */
 .service-image-12 {
-
-    top: 3047px;
-    left: 100px;
-    position: absolute;
+    width: 480px;
+    height: 480px;
+    flex-shrink: 0;
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
 .service-image-11 {
-    top: 3047px;
-    left: 560px;
-    position: absolute;
+    width: 480px;
+    height: 480px;
+    flex-shrink: 0;
+    background: url(<path-to-image>) lightgray 50% / cover no-repeat;
 }
 
 .service-image-3 {
@@ -163,17 +131,6 @@
     text-align: center;
 }
 
-.private-parties-text:hover {
-    font-family: 'Muli', sans-serif;
-    font-weight: 600;
-    font-size: 35px;
-    line-height: 100%;
-    letter-spacing: 0px;
-    width: 242px;
-    height: 44px;
-    color: #050A3A;
-}
-
 /* Gradient Rectangle under text */
 .private-parties-text::after {
     content: '';
@@ -186,10 +143,536 @@
     display: block;
 }
 
+.services {
+    margin-top: -45rem;
+    height: 623px;
+    left: -1rem;
+    position: relative;
+    box-sizing: border-box;
+}
 
-.services{
-    margin-top: 20rem;
+.services * {
+    box-sizing: border-box;
+}
+
+.h-2-title {
+    width: 409px;
+    height: 79px;
+    position: absolute;
+    left: 157px;
+    top: 0px;
+}
+
+.our-services {
+    color: #050a3a;
+    text-align: left;
+    font-family: "Mulish", sans-serif;
+    font-size: 63px;
+    position: absolute;
+    right: 0.73%;
+    left: 156px;
+    width: 140.27%;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.service-1 {
+    width: 480px;
+    height: 480px;
+    position: static;
+}
+
+.mask4 {
+    width: 22rem;
+    height: 22rem;
+    position: absolute;
+    left: 0px;
+    top: 143px;
+    object-fit: cover;
+}
+
+.service-3-active {
+    width: 480px;
+    height: 480px;
+    position: static;
 }
 
 
 
+.bitmap {
+    width: 22rem;
+    height: 22rem;
+    position: absolute;
+    left: 22rem;
+    top: 143px;
+    object-fit: cover;
+
+}
+
+.hover {
+    width: 480px;
+    height: 480px;
+    position: static;
+}
+
+.rectangle {
+    background: #ffffff;
+    width: 22rem;
+    height: 22rem;
+    position: absolute;
+    left: 44rem;
+    top: 143px;
+}
+
+.text {
+    width: 15rem;
+    height: 53px;
+    position: absolute;
+    left: 48rem;
+    top: 19rem;
+}
+
+.private-parties-copy {
+    color: #050a3a;
+    text-align: left;
+    font-family: "Mulish", sans-serif;
+    font-size: 34px;
+    font-weight: 600;
+    position: absolute;
+    right: 0%;
+    left: 0rem;
+    width: 100%;
+    top: calc(50% - 27.5px);
+}
+
+.rectangle-copy-4 {
+    background: linear-gradient(90deg, rgba(255, 208, 168, 1) 0%, rgba(255, 79, 192, 1) 100%);
+    width: 99.17%;
+    height: 9.09%;
+    position: absolute;
+    right: 0%;
+    left: 0.83%;
+    bottom: 0%;
+    top: 82.91%;
+}
+
+.mask {
+    width: 21.95rem;
+    height: 22rem;
+    position: absolute;
+    left: 67.6rem;
+    top: 143px;
+    object-fit: cover;
+}
+
+.partners,
+.partners * {
+    box-sizing: border-box;
+}
+
+.partners {
+    margin-top: 131px;
+    left: 156px;
+    width: 78rem;
+    position: relative;
+}
+
+.logos {
+    width: 78rem;
+    height: 24rem;
+    position: static;
+}
+
+.charcoal-yellow-rectangle-architectural-logo {
+    opacity: 0.55;
+    width: 154px;
+    height: 62px;
+    position: absolute;
+    left: 50rem;
+    top: 10rem;
+    object-fit: cover;
+}
+
+.teal-leaves-icon-fitness-logo {
+    opacity: 0.55;
+    width: 11rem;
+    height: 3rem;
+    position: absolute;
+    left: 35rem;
+    top: 10rem;
+    object-fit: cover;
+}
+
+.blue-arrow-internet-logo {
+    opacity: 0.55;
+    width: 9rem;
+    height: 3rem;
+    position: absolute;
+    left: 23rem;
+    top: 167px;
+    object-fit: cover;
+}
+
+.active {
+    width: 187px;
+    height: 44px;
+    position: static;
+}
+
+.yellow-and-blue-accounting-logo {
+    width: 10rem;
+    height: 2rem;
+    position: absolute;
+    left: 10rem;
+    top: 174px;
+    object-fit: cover;
+}
+
+.baks-clothing-company-logo {
+    opacity: 0.55;
+    width: 4rem;
+    height: 5rem;
+    position: absolute;
+    left: 5px;
+    top: 143px;
+    object-fit: cover;
+}
+
+.h-2-title {
+    width: 279px;
+    height: 79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.partners-copy {
+    color: #050a3a;
+    text-align: left;
+    font-family: var(--heading-2-font-family, "Mulish-SemiBold", sans-serif);
+    font-size: var(--heading-2-font-size, 63px);
+    letter-spacing: var(--heading-2-letter-spacing, 3px);
+    position: absolute;
+    right: -48.03%;
+    left: 0%;
+    width: 148.03%;
+    top: 50%;
+    translate: 0 -50%;
+}
+
+.orange-with-ball-icon-basketball-logo {
+    opacity: 0.55;
+    width: 194px;
+    height: 69px;
+    position: absolute;
+    left: 65rem;
+    top: 164px;
+    object-fit: cover;
+
+}
+
+/* MEDIA QUERIES POUR RESPONSIVE */
+
+/* Tablettes et petits écrans (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .professional-tagline {
+        font-size: 3rem;
+        width: 90%;
+        left: 5%;
+    }
+    
+    .identity-image {
+        width: 90%;
+        height: auto;
+        left: 5%;
+    }
+
+    .img2{
+        width: 29rem;
+    }
+    
+    .about-us-heading {
+        left: 50px;
+    }
+    
+    .about-us-content {
+        left: 50px;
+        width: 90%;
+        top: -20rem;
+    }
+    
+    .section-title {
+        width: 90%;
+    }
+    
+    .services {
+        margin-top: -10rem;
+        left: 0;
+    }
+    
+    .mask, .rectangle, .text {
+        left: 50rem;
+    }
+    
+    .partners {
+        left: 50px;
+    }
+    
+    .logos {
+        width: 90%;
+    }
+    
+    .charcoal-yellow-rectangle-architectural-logo {
+        left: 800px;
+    }
+    
+    .orange-with-ball-icon-basketball-logo {
+        left: 60rem;
+    }
+}
+
+/* Tablettes (max-width: 992px) */
+@media (max-width: 992px) {
+    .professional-tagline {
+        font-size: 2.5rem;
+        width: 95%;
+        left: 2.5%;
+    }
+    
+
+    .img2{
+        width: 29rem;
+    }
+    .identity-image {
+        width: 95%;
+        left: 2.5%;
+    }
+    
+    .about-us-heading {
+        left: 20px;
+    }
+    
+    .about-us-content {
+        left: 20px;
+        width: 95%;
+        top: -15rem;
+    }
+    
+    .services {
+        margin-top: -5rem;
+    }
+    
+    .mask2, .bitmap {
+        left: 240px;
+    }
+    
+    .mask, .rectangle, .text {
+        left: 30rem;
+    }
+    
+    .partners {
+        left: 20px;
+    }
+    
+    .charcoal-yellow-rectangle-architectural-logo {
+        left: 600px;
+    }
+    
+    .teal-leaves-icon-fitness-logo {
+        left: 400px;
+    }
+    
+    .orange-with-ball-icon-basketball-logo {
+        left: 45rem;
+    }
+}
+
+/* Mobiles (max-width: 768px) */
+@media (max-width: 768px) {
+    .identity-card {
+        max-width: 100%;
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .img2{
+        width: 31rem;
+    }
+
+    .professional-tagline {
+        font-size: 1.3rem;
+        width: 100%;
+        left: 0;
+        text-align: center;
+        position: relative;
+    }
+
+    .identity-image {
+        width: 100%;
+        height: auto;
+        left: 0;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .about-us-heading {
+        left: 0;
+        text-align: center;
+        font-size: 1.2rem;
+        margin-top: 10px;
+        width: 30rem;
+    }
+
+    .about-us-content {
+        left: 0;
+        width: 100%;
+        top: 0;
+        padding: 0 10px;
+        font-size: 1rem;
+        line-height: 1.5;
+        position: relative;
+    }
+
+    .section-title {
+        width: 100%;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .services {
+        margin-top: 1rem;
+        height: auto;
+        left: 0;
+        position: relative;
+        padding: 0 5px;
+    }
+
+    .text-description{
+        width: 28rem;
+    }
+
+    .services-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .service-1, .service-3-active, .service-4, .hover {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mask4, .mask2, .bitmap, .rectangle, .mask {
+        width: 100% !important;
+        height: auto !important;
+        left: 0 !important;
+        top: 0 !important;
+        position: relative !important;
+        max-width: 100%;
+        object-fit: cover;
+        margin-bottom: 0;
+    }
+
+    .hover, .rectangle, .text {
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+    }
+
+    .text {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .private-parties-copy {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .our-services {
+        font-size: 2rem;
+        position: relative;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .h-2-title {
+        width: 100%;
+        left: 0;
+        position: relative;
+    }
+
+    .partners {
+        left: 0;
+        height: auto;
+        margin-top: 30px;
+        position: relative;
+    }
+
+    .logos {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logos img, .logos .active img {
+        width: 80px !important;
+        height: auto !important;
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        margin: 5px;
+    }
+
+    .partners-copy {
+        font-size: 1.3rem;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        right: 0;
+        left: 0;
+    }
+}
+
+/* Petits mobiles (max-width: 480px) */
+@media (max-width: 480px) {
+
+    .img2{
+        width: 30.9rem;
+    }
+    .identity-card {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .professional-tagline {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .our-services {
+        font-size: 30px;
+    }
+    
+    .partners-copy {
+        font-size: 30px;
+    }
+    
+    .private-parties-copy {
+        font-size: 24px;
+    }
+}

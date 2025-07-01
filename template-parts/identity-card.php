@@ -39,26 +39,57 @@
 </div>
 
 <div class="services">
+  <div class="h-2-title">
+    <div class="our-services">Our Services</div>
+  </div>
+  
+  <div class="services-container">
+    <div class="service-1">
+      <img class="mask4" src="<?php echo get_template_directory_uri(); ?>/img/12.png" />
+    </div>
+    
+    <div class="service-3-active">
+      <div class="mask2"></div>
+      <img class="bitmap" src="<?php echo get_template_directory_uri(); ?>/img/11.png" />
+      <div class="hover">
+        <div class="rectangle"></div>
+        <div class="text">
+          <div class="private-parties-copy">Private Parties</div>
+          <div class="rectangle-copy-4"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="service-4">
+      <img class="mask" src="<?php echo get_template_directory_uri(); ?>/img/3.png" />
+    </div>
+  </div>
+</div>
 
-<p class="our-services-heading">Our Services</p>
-
-<img src="<?php echo get_template_directory_uri(); ?>/img/12.png" 
-     alt="Service 1" 
-     class="service-image-12" />
-
-<img src="<?php echo get_template_directory_uri(); ?>/img/11.png" 
-     alt="Service 2" 
-     class="service-image-11" />
-<p class="private-parties-text">Private Parties</p>
-
-<img src="<?php echo get_template_directory_uri(); ?>/img/3.png" 
-     alt="Service 3" 
-     class="service-image-3" />
-
-
-
-
-
-
-
+<div class="partners">
+  <div class="h-2-title">
+    <div class="partners-copy">Our Partners</div>
+  </div>
+  
+  <div class="logos">
+    <img class="charcoal-yellow-rectangle-architectural-logo"
+         src="<?php echo get_template_directory_uri(); ?>/img/partner-5.svg" />
+    
+    <img class="orange-with-ball-icon-basketball-logo"
+         src="<?php echo get_template_directory_uri(); ?>/img/partner-6.svg" />
+    
+    <img class="teal-leaves-icon-fitness-logo"
+         src="<?php echo get_template_directory_uri(); ?>/img/partner-4.svg" />
+    
+    <img class="blue-arrow-internet-logo" 
+         src="<?php echo get_template_directory_uri(); ?>/img/partner-3.svg" />
+    
+    <div class="active">
+      <img class="yellow-and-blue-accounting-logo"
+           src="<?php echo get_template_directory_uri(); ?>/img/partner-2.svg" />
+    </div>
+    
+    <img class="baks-clothing-company-logo"
+         src="<?php echo get_template_directory_uri(); ?>/img/partner-1.svg" />
+  </div>
 </div>
