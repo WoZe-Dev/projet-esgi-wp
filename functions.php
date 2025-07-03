@@ -36,12 +36,26 @@ function esgi_theme_styles() {
         filemtime(get_template_directory() . '/css/footer.css') // Version basée sur la date de modification
     );
 
+    wp_enqueue_style(
+        'esgi-logo-style', 
+        get_template_directory_uri() . '/css/logo.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/logo.css') // Version basée sur la date de modification
+    );
+
     // Fichier CSS home
     wp_enqueue_style(
         'esgi-home-style', 
         get_template_directory_uri() . '/css/home.css',
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/home.css') // Version basée sur la date de modification
+    );
+
+    wp_enqueue_style(
+        'esgi-services-style', 
+        get_template_directory_uri() . '/css/services.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/services.css') // Version basée sur la date de modification
     );
 
 wp_enqueue_style(
@@ -51,6 +65,8 @@ wp_enqueue_style(
     filemtime(get_template_directory() . '/css/aboutus.css') // Version basée sur la date de modification
 );
 }
+
+
 add_action('wp_enqueue_scripts', 'esgi_theme_styles');
 
 function esgi_enqueue_assets()

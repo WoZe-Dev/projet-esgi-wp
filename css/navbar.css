@@ -4,7 +4,6 @@
   .site-header {
     position: relative;
     z-index: 100;
-    background: var(--bg-color);
     font-family: "Overpass", sans-serif;
     width: 100%;
     height: 8.438rem; /* 135px / 16 = 8.438rem */

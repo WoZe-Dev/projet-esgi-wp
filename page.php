@@ -7,11 +7,10 @@ get_header();
 <main class="page">
     <div class="container">
 
-                <div>
-                    <?= the_content() ?>
-                </div>
+            
                 <?php if (is_page('about-us')) include('template-parts/about-us.php'); ?>
-
+                <?php if (is_page('services')) include('template-parts/services.php'); ?>
+                <?php if (is_page('partners')) include('template-parts/partners.php'); ?>
     </div>
 </main>
 
