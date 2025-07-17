@@ -13,16 +13,17 @@ add_action('after_setup_theme', 'esgi_add_theme_support', 0);
 function esgi_add_theme_support()
 {
     add_theme_support('custom-logo');
-    add_theme_support('post-thumbnails');   
+    add_theme_support('post-thumbnails');
 }
 
-function esgi_theme_styles() {
+function esgi_theme_styles()
+{
     // Style principal du thème
     wp_enqueue_style('esgi-main-style', get_stylesheet_uri());
-    
+
     // Fichier CSS nav-bar
     wp_enqueue_style(
-        'esgi-navbar-style', 
+        'esgi-navbar-style',
         get_template_directory_uri() . '/css/navbar.css',
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/navbar.css') // Version basée sur la date de modification
@@ -30,14 +31,14 @@ function esgi_theme_styles() {
 
     // Fichier CSS footer
     wp_enqueue_style(
-        'esgi-footer-style', 
+        'esgi-footer-style',
         get_template_directory_uri() . '/css/footer.css',
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/footer.css') // Version basée sur la date de modification
     );
 
     wp_enqueue_style(
-        'esgi-logo-style', 
+        'esgi-logo-style',
         get_template_directory_uri() . '/css/logo.css',
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/logo.css') // Version basée sur la date de modification
@@ -45,25 +46,32 @@ function esgi_theme_styles() {
 
     // Fichier CSS home
     wp_enqueue_style(
-        'esgi-home-style', 
+        'esgi-home-style',
         get_template_directory_uri() . '/css/home.css',
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/home.css') // Version basée sur la date de modification
     );
 
     wp_enqueue_style(
-        'esgi-services-style', 
+        'esgi-services-style',
         get_template_directory_uri() . '/css/services.css',
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/services.css') // Version basée sur la date de modification
     );
 
-wp_enqueue_style(
-    'esgi-aboutus-style', 
-    get_template_directory_uri() . '/css/aboutus.css',
-    array('esgi-main-style'), // Dépendance du style principal
-    filemtime(get_template_directory() . '/css/aboutus.css') // Version basée sur la date de modification
-);
+    wp_enqueue_style(
+        'esgi-404-style',
+        get_template_directory_uri() . '/css/404.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/services.css') // Version basée sur la date de modification
+    );
+
+    wp_enqueue_style(
+        'esgi-aboutus-style',
+        get_template_directory_uri() . '/css/aboutus.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/aboutus.css') // Version basée sur la date de modification
+    );
 }
 
 
@@ -158,7 +166,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'esgi_sanitize_bool'
     ]);
-    
+
     $wp_customize->add_control('has_footer_search', [
         'type' => 'checkbox',
         'priority' => 3,
@@ -182,7 +190,7 @@ function esgi_customize_register($wp_customize)
             'transport' => 'refresh',
             'sanitize_callback' => 'esc_url_raw'
         ]);
-        
+
         $wp_customize->add_control('url_' . $platform, [
             'type' => 'url',
             'priority' => $priority++,
@@ -198,7 +206,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'esgi_sanitize_bool'
     ]);
-    
+
     $wp_customize->add_control('uppercase_title', [
         'type' => 'checkbox',
         'priority' => $priority++,
@@ -214,7 +222,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field'
     ]);
-    
+
     $wp_customize->add_control('home_hero_title', [
         'type' => 'text',
         'priority' => 1,
@@ -229,7 +237,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field'
     ]);
-    
+
     $wp_customize->add_control('home_hero_subtitle', [
         'type' => 'text',
         'priority' => 2,
@@ -244,7 +252,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_textarea_field'
     ]);
-    
+
     $wp_customize->add_control('home_hero_description', [
         'type' => 'textarea',
         'priority' => 3,
@@ -259,7 +267,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field'
     ]);
-    
+
     $wp_customize->add_control('home_hero_button_text', [
         'type' => 'text',
         'priority' => 4,
@@ -274,7 +282,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'esc_url_raw'
     ]);
-    
+
     $wp_customize->add_control('home_hero_button_url', [
         'type' => 'url',
         'priority' => 5,
@@ -290,7 +298,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field'
     ]);
-    
+
     $wp_customize->add_control('home_services_title', [
         'type' => 'text',
         'priority' => 6,
@@ -307,7 +315,7 @@ function esgi_customize_register($wp_customize)
             'transport' => 'refresh',
             'sanitize_callback' => 'sanitize_text_field'
         ]);
-        
+
         $wp_customize->add_control('home_service_' . $i . '_title', [
             'type' => 'text',
             'priority' => 6 + $i,
@@ -322,7 +330,7 @@ function esgi_customize_register($wp_customize)
             'transport' => 'refresh',
             'sanitize_callback' => 'sanitize_textarea_field'
         ]);
-        
+
         $wp_customize->add_control('home_service_' . $i . '_description', [
             'type' => 'textarea',
             'priority' => 6 + $i + 3,
@@ -342,7 +350,7 @@ function esgi_wp_head()
 {
     $main_color = get_theme_mod('main_color', '#3f51b5');
     echo '<style>:root{ --main-color: ' . $main_color . '}</style>';
-    
+
     if (get_theme_mod('uppercase_title', false)) {
         echo '<style>
             h1, h2, h3, h4, h5, h6 {
@@ -367,36 +375,38 @@ add_filter('script_loader_src', 'add_cache_busting_version');
 
 // Ajouter des headers pour empêcher le cache du navigateur
 add_action('wp_head', 'add_no_cache_headers');
-function add_no_cache_headers() {
+function add_no_cache_headers()
+{
     if (!is_user_logged_in()) return;
-    
+
     echo '<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">';
     echo '<meta http-equiv="Pragma" content="no-cache">';
     echo '<meta http-equiv="Expires" content="0">';
 }
 
 // Fonction pour vider le cache améliorée
-function clear_site_cache() {
+function clear_site_cache()
+{
     // Vider le cache WordPress
     if (function_exists('wp_cache_flush')) {
         wp_cache_flush();
     }
-    
+
     // Vider le cache des plugins de cache populaires
     if (function_exists('w3tc_flush_all')) {
         w3tc_flush_all();
     }
-    
+
     if (function_exists('wp_cache_clear_cache')) {
         wp_cache_clear_cache();
     }
-    
+
     // Forcer la régénération des assets avec une nouvelle version
     update_option('esgi_cache_version', time());
-    
+
     // Vider le cache des objets WordPress
     wp_cache_flush();
-    
+
     // Vider les transients
     global $wpdb;
     $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name LIKE '_transient_%'");
@@ -404,7 +414,8 @@ function clear_site_cache() {
 }
 
 // Modifier la fonction add_cache_busting_version pour être plus agressive
-function add_cache_busting_version($src) {
+function add_cache_busting_version($src)
+{
     if (strpos($src, get_template_directory_uri()) !== false) {
         $cache_version = get_option('esgi_cache_version', time());
         $src = add_query_arg('v', $cache_version, $src);
@@ -414,13 +425,14 @@ function add_cache_busting_version($src) {
 
 // Ajouter un message de confirmation après vidage du cache
 add_action('admin_post_clear_cache', 'handle_clear_cache');
-function handle_clear_cache() {
+function handle_clear_cache()
+{
     if (!wp_verify_nonce($_GET['_wpnonce'], 'clear_cache_nonce') || !current_user_can('manage_options')) {
         wp_die('Accès non autorisé');
     }
-    
+
     clear_site_cache();
-    
+
     // Rediriger avec un message de succès
     $redirect_url = add_query_arg('cache_cleared', '1', wp_get_referer());
     wp_redirect($redirect_url);
@@ -429,7 +441,8 @@ function handle_clear_cache() {
 
 // Afficher un message de confirmation
 add_action('admin_notices', 'show_cache_cleared_notice');
-function show_cache_cleared_notice() {
+function show_cache_cleared_notice()
+{
     if (isset($_GET['cache_cleared']) && $_GET['cache_cleared'] == '1') {
         echo '<div class="notice notice-success is-dismissible"><p>Cache vidé avec succès!</p></div>';
     }
