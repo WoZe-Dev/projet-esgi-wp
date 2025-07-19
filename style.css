@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+  --primary-color: #050a3a;
+  --text-color: #8a8a8a;
+  --bg-color: #fff;
+  --light-grey: #f0f0f0;
+  --menu-bg: #050a3a;
+  --menu-text: #ffffff;
+  --accent-color: #ff6b9d;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 42px;
+}
+
+h1,
+h2,
+h3,h4 {
+  color: var(--primary-color);
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 84px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 63px;
+  letter-spacing: 3px;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 47px;
+}
+h4 {
+font-weight: 600;
+font-size: 32px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.text-large {
+  font-family: "Muli", sans-serif;
+  font-size: 4.25rem;
+  color: #050a3a;
+  width: 72.25rem;
+}
+
+.text-description {
+  width: 30.125rem;
+  color: #8a8a8a;
+  font-family: "Muli", sans-serif;
+  font-size: 1.625rem;
+  line-height: 2.625rem;
+}

@@ -1,0 +1,59 @@
+body.error404 {
+  background-color: var(--menu-bg);
+}
+
+.page-404 {
+  color: white;
+}
+
+.content {
+  padding-right: 4rem;
+  max-width: 1053px;
+}
+
+.page-404 h1 {
+  color: white;
+  font-weight: 600;
+  font-size: 5.25rem;
+  margin-bottom: 3.5rem;
+}
+
+.page-404 p {
+  font-weight: 400;
+  line-height: 2.625rem;
+  font-size: 1.625rem;
+}
+
+.search-form {
+  width: 100%;
+  position: relative;
+  align-items: center;
+  margin-top: 3.5rem;
+}
+
+.search-field {
+  color: white;
+  width: 100%;
+  font-weight: 400;
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0;
+  padding-bottom: 1rem;
+}
+
+.search-field:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.search-submit {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-left: 1rem;
+}
