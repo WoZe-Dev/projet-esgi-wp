@@ -52,7 +52,7 @@ h3 {
 }
 h4 {
 font-weight: 600;
-font-size: 32px;
+font-size: 35px;
 }
 
 .container {
@@ -62,6 +62,7 @@ font-size: 32px;
 }
 
 .grid {
+  background-color: blanchedalmond;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);

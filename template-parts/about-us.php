@@ -1,4 +1,4 @@
-<div class="about-us-page grid">
+<div class="about-us-page grid container">
   <!-- TITLE -->
   <h1>About us.</h1>
 
