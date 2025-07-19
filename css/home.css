@@ -1,16 +1,20 @@
-.home-page h1 {
-  grid-column: 1 / span 12;
-  margin-top: 72px;
-  margin-bottom: 128px;
+h1 {
+margin-bottom: 226px
 }
 
-.home p {
-  font-size: 26px;
-}
 
 #first-picture {
-  grid-column: 3 / span 12;
-  margin-bottom: 2rem;
+  float: right;
+  margin-bottom: 132px;
+}
+
+.paragraph {
+    grid-column: 3 /span 7;
+    margin-bottom: 125px;
+    h2 {
+        margin-bottom: 16px;
+        line-height: 100%;
+    }
 }
 
 .heading {
@@ -22,29 +26,4 @@
 
 .heading h2 {
   margin-bottom: 16px;
-}
-
-
-#second-picture {
-  grid-column: 1 / span 4 ;
-  transform: translateX(-160px);
-}
-
-.text-content {
-  grid-column: 6 / span 12;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.paragraph {
-  h3 {
-    margin-bottom: 26px;
-    line-height: 100%;
-  }
-  p {
-    font-size: 20px;
-    line-height: 38px;
-  }
-  margin-bottom: 2rem;
 }

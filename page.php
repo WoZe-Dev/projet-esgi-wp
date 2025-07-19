@@ -5,11 +5,8 @@ get_header();
 ?>
 
 <main>
-                <?php if (is_page('about-us')) include('template-parts/about-us.php'); ?>
-                <?php if (is_page('services')) include('template-parts/services.php'); ?>
-                <?php if (is_page('partners')) include('template-parts/partners.php'); ?>
+    <h1><?php the_title(); ?></h1>
 </main>
 
 
 <?php get_footer() ?>
-

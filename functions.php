@@ -72,6 +72,20 @@ function esgi_theme_styles()
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/aboutus.css') // Version basée sur la date de modification
     );
+
+    wp_enqueue_style(
+        'esgi-page-aboutus-style',
+        get_template_directory_uri() . '/css/page-aboutus.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/page-aboutus.css') // Version basée sur la date de modification
+    );
+
+    wp_enqueue_style(
+        'esgi-partners-part-style',
+        get_template_directory_uri() . '/css/partners-part.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/partners-part.css') // Version basée sur la date de modification
+    );
 }
 
 

@@ -1,4 +1,4 @@
-<div class="home-page grid container">
+<div class="front-page grid container">
   <!-- TITLE -->
   <h1>A really professional structure for all your events!</h1>
 

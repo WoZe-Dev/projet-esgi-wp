@@ -15,6 +15,7 @@
 .footer-content {
     height: 10rem;
     display: flex;
+    margin-bottom: 70px;
 }
 
 .footer-contacts {

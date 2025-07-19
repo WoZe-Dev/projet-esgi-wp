@@ -17,6 +17,11 @@
   padding: 0;
 }
 
+main {
+  margin-top: 76px;
+  padding-bottom: 130px;
+}
+
 body {
   font-family: "Mulish", sans-serif;
   padding: 0;
@@ -24,6 +29,7 @@ body {
 }
 
 p {
+  font-size: 26px;
   font-weight: 400;
   color: var(--text-color);
   line-height: 42px;
@@ -38,12 +44,14 @@ h3,h4 {
 h1 {
   font-weight: 600;
   font-size: 84px;
+  margin-bottom: 128px;
 }
 
 h2 {
   font-weight: 600;
   font-size: 63px;
   letter-spacing: 3px;
+  margin-bottom: 64px;
 }
 
 h3 {
@@ -62,7 +70,7 @@ font-size: 35px;
 }
 
 .grid {
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond; */
     width: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -81,4 +89,8 @@ font-size: 35px;
   font-family: "Muli", sans-serif;
   font-size: 1.625rem;
   line-height: 2.625rem;
+}
+
+.template-part {
+  margin-bottom: 130px;
 }
