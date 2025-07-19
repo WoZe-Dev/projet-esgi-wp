@@ -5,7 +5,12 @@ get_header();
 ?>
 
 <main>
-    <h1><?php the_title(); ?></h1>
+    <div class="container">
+        <h1><?php the_title(); ?>.</h1>
+        <? if (is_page('partners')): ?>
+            <?php get_template_part('template-parts/partners'); ?>
+        <? endif; ?>
+    </div>
 </main>
 
 

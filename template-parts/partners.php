@@ -1,6 +1,8 @@
 <div class="partners-part template-part container">
 
-     <h2>Our Partners</h2>
+     <?php if (!is_page('partners')): ?>
+          <h2>Our Partners</h2>
+     <?php endif ?>
 
      <div class="logos">
           <img class="charcoal-yellow-rectangle-architectural-logo"

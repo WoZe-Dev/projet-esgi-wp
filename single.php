@@ -4,8 +4,7 @@ get_header();
 
 <main class="post">
     <div class="container">
-
-                <h1><?php the_title() ?></h1>
+                <h1><?php the_title() ?>.</h1>
                 <div class="post-meta">
                     <div class="post-author">
                         <img src="<?= get_avatar_url($post->post_author) ?>" alt="<?= get_the_author_meta('nickname', $post->post_author) ?>">

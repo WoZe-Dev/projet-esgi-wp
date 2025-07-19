@@ -1,9 +1,11 @@
 <div class="services-container template-part">
-  <div class="container">
-    <h2>
-      Our Services
-    </h2>
-  </div>
+  <?php if (!is_page('services')): ?>
+    <div class="container">
+      <h2>
+        Our Services
+      </h2>
+    </div>
+  <?php endif; ?>
   <div class="services">
     <img class="service-item" src="<?php echo get_template_directory_uri(); ?>/img/12.png" />
     <img class="service-item" src="<?php echo get_template_directory_uri(); ?>/img/11.png" />

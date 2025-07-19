@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main>
+<main class="front-page">
     <?php
     $has_social_links = false;
     $social_platforms = ['twitter', 'facebook', 'google', 'linkedin'];
