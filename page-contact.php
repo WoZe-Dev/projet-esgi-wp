@@ -32,8 +32,10 @@
         </div>
     <?php endif; ?>
 
-    <!-- Conatact Form -->
-     
+    <!-- contact Form -->
+    <div class="container">
+        <?php get_template_part('template-parts/contact-form'); ?>
+    </div>
 </main>
 
 <?php get_footer(); ?>

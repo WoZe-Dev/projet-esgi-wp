@@ -1,0 +1,41 @@
+.contact-form {
+    max-width: 1050px;
+    h2 {
+        margin-bottom: 16px;
+    }
+    P {
+        margin-bottom: 56px;
+    }
+}
+
+.contact-form form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 32px ;
+}
+
+#subject, #message {
+    width: 100%;
+}
+
+#email, #phone {
+    flex: 1;
+}
+
+#message {
+    height: 180px;
+}
+
+.submit-button {
+    background-color: transparent;
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+

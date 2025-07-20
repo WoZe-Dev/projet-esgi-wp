@@ -4,7 +4,6 @@
   .site-header {
     position: relative;
     z-index: 100;
-    font-family: "Overpass", sans-serif;
     width: 100%;
     height: 8.438rem; /* 135px / 16 = 8.438rem */
     max-width: 100vw; /* Pour éviter le débordement horizontal */
@@ -296,7 +295,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: var(--menu-bg);
+    background-color: var(--primary-color);
     z-index: 1001;
     opacity: 0;
     visibility: hidden;
@@ -322,9 +321,10 @@
   
   /* Header du menu fullscreen */
   .menu-header {
-    width: 100%;
     position: absolute;
     top: 2rem;
+    right: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -358,8 +358,6 @@
     width: 40px;
     height: 40px;
   }
-  
-  
   
   .close-menu svg {
     width: 20px;
@@ -400,14 +398,13 @@
   .dropdown-nav-menu li a {
     color: var(--menu-text);
     text-decoration: none;
-    font-size: 2.5rem;
-    font-weight: 300;
+    font-size: 70px;
+    font-weight: 600;
     line-height: 1.1;
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
     padding: 0.3rem 0;
-    font-family: "Overpass", sans-serif;
     text-align: right;
     overflow: visible;
   }
@@ -537,11 +534,6 @@
 
     .menu-header {
       top: 4rem;
-    }
-    
-    
-    .dropdown-nav-menu li a {
-      font-size: rem;
     }
   }
   

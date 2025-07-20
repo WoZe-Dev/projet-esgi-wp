@@ -42,7 +42,7 @@
                 <!-- Menu fullscreen overlay -->
                 <div class="dropdown-menu-overlay">
                     <div class="dropdown-menu-content container">
-                        <div class="menu-header">
+                        <div class="menu-header container">
                             <div class="menu-logo">
                                 <a href="<?php echo home_url(); ?>">
                                     <a>ESGI.</a>

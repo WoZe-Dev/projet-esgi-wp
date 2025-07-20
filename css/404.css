@@ -31,23 +31,6 @@ body.error404 {
   margin-top: 3.5rem;
 }
 
-.search-field {
-  color: white;
-  width: 100%;
-  font-weight: 400;
-  background-color: transparent;
-  font-size: 20px;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  padding: 0;
-  padding-bottom: 1rem;
-}
-
-.search-field:focus {
-  outline: none;
-  box-shadow: none;
-}
-
 .search-submit {
   position: absolute;
   right: 0;

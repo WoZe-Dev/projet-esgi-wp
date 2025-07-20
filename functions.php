@@ -124,6 +124,14 @@ function esgi_theme_styles()
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/page-contact.css') // Version basée sur la date de modification
     );
+
+    // Contact Form
+    wp_enqueue_style(
+        'esgi-contact-form-style',
+        get_template_directory_uri() . '/css/contact-form.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/contact-form.css') // Version basée sur la date de modification
+    );
 }
 
 

@@ -3,9 +3,9 @@
 :root {
   --primary-color: #050a3a;
   --text-color: #8a8a8a;
+  --text-fade: #ADADAD;
   --bg-color: #fff;
-  --light-grey: #f0f0f0;
-  --menu-bg: #050a3a;
+  --light-grey: #E4E4E4;
   --menu-text: #ffffff;
   --accent-color: #ff6b9d;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -22,9 +22,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+    font-family: "Mulish", sans-serif;
 }
 body {
-  font-family: "Mulish", sans-serif;
+
   padding: 0;
   margin: 0;
 }
@@ -95,6 +96,19 @@ h6,h5 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 50px;
+}
+
+input, textarea {
+  font-family: "Mulish", sans-serif;
+  color: var(--text-fade);
+  width: 100%;
+  font-weight: 400;
+  background-color: transparent;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid var(--light-grey);
+  padding: 0;
+  padding-bottom: 1rem;
 }
 
 .template-part {
