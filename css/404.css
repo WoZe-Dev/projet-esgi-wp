@@ -1,28 +1,21 @@
 body.error404 {
-  background-color: var(--menu-bg);
+  background-color: var(--primary-color);
 }
 
-.page-404 {
+.page-404 h1, .page-404 p {
   color: white;
 }
-
-.content {
-  padding-right: 4rem;
+.page-404 .content {
   max-width: 1053px;
 }
 
 .page-404 h1 {
-  color: white;
   font-weight: 600;
   font-size: 5.25rem;
   margin-bottom: 3.5rem;
 }
 
-.page-404 p {
-  font-weight: 400;
-  line-height: 2.625rem;
-  font-size: 1.625rem;
-}
+
 
 .search-form {
   width: 100%;

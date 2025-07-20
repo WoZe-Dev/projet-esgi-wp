@@ -24,7 +24,7 @@
 
         <!-- Social Icons -->
         <div class="footer-bottom">
-            <p>2022 Figma Template by ESGI</p>
+            <small>2022 Figma Template by ESGI</small>
             <div class="footer-socials">
                 <a href="https://www.linkedin.com/" aria-label="LinkedIn" class="linkedin-icon">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/linkedin.svg" alt="LinkedIn" width="24" height="24">

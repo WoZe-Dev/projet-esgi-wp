@@ -41,3 +41,9 @@
     text-decoration: none;
 }
 
+.footer small {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
