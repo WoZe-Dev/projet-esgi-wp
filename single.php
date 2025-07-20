@@ -31,6 +31,9 @@ get_header();
                         </div>
                     </div>
                 </div>
+                <!-- COMMENTS SECTION -->
+                <?php comments_template(); ?>
+
             <?php endwhile; ?>
         <?php endif; ?>
     </div>
