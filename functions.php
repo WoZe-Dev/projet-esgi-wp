@@ -67,6 +67,13 @@ function esgi_theme_styles()
     );
 
     wp_enqueue_style(
+        'esgi-search-style',
+        get_template_directory_uri() . '/css/search.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/search.css') // Version basée sur la date de modification
+    );
+
+    wp_enqueue_style(
         'esgi-aboutus-style',
         get_template_directory_uri() . '/css/aboutus.css',
         array('esgi-main-style'), // Dépendance du style principal
@@ -92,6 +99,30 @@ function esgi_theme_styles()
         get_template_directory_uri() . '/css/page-services.css',
         array('esgi-main-style'), // Dépendance du style principal
         filemtime(get_template_directory() . '/css/page-services.css') // Version basée sur la date de modification
+    );
+
+    // Blog CSS
+    wp_enqueue_style(
+        'esgi-blog-style',
+        get_template_directory_uri() . '/css/blog.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/blog.css') // Version basée sur la date de modification
+    );
+
+    // Post list CSS
+    wp_enqueue_style(
+        'esgi-post-list-style',
+        get_template_directory_uri() . '/css/post-list.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/post-list.css') // Version basée sur la date de modification
+    );
+
+    // Page Contact CSS
+    wp_enqueue_style(
+        'esgi-page-contact-style',
+        get_template_directory_uri() . '/css/page-contact.css',
+        array('esgi-main-style'), // Dépendance du style principal
+        filemtime(get_template_directory() . '/css/page-contact.css') // Version basée sur la date de modification
     );
 }
 

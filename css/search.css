@@ -1,0 +1,41 @@
+.search-results {
+    margin-bottom: 130px;
+}
+
+.search-query {
+    position: relative;
+}
+
+.search-query::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    font-weight: 600;
+    background: linear-gradient(90deg, #FFD0A8 0%, #FF4FC0 100%);
+}
+
+.post-content {
+    grid-column: span 6;
+
+    h4 {
+        margin-bottom: 26px;
+    }
+    .post-meta {
+        margin-bottom: 16px;
+    }
+    p {
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .post-content {
+        grid-column: span 4;
+    }
+    
+}

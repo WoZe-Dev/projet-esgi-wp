@@ -7,11 +7,27 @@ get_header();
 <main>
     <div class="container">
         <h1><?php the_title(); ?>.</h1>
-        <? if (is_page('partners')): ?>
+        
+        <?php if (is_page('partners')): ?>
             <?php get_template_part('template-parts/partners'); ?>
-        <? endif; ?>
+        <?php endif; ?>
+        
+        <?php if (is_page('blog')): ?>
+            <?php get_template_part('template-parts/blog-list'); ?>
+        <?php endif; ?>
+        
+        <?php if (!is_page(array('partners', 'blog', 'services'))): ?>
+            <div class="page-content">
+                <?php 
+                if (have_posts()) : 
+                    while (have_posts()) : the_post();
+                        the_content();
+                    endwhile;
+                endif;
+                ?>
+            </div>
+        <?php endif; ?>
     </div>
 </main>
-
 
 <?php get_footer() ?>

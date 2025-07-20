@@ -312,7 +312,6 @@
   }
   
   .dropdown-menu-content {
-    padding: 2rem;
     position: relative;
     height: 100%;
     display: flex;
@@ -323,10 +322,9 @@
   
   /* Header du menu fullscreen */
   .menu-header {
+    width: 100%;
     position: absolute;
     top: 2rem;
-    left: 2rem;
-    right: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -524,15 +522,7 @@
   
   /* Responsive Design */
   @media (min-width: 768px) {
-    .dropdown-menu-content {
-      padding: 3rem 4rem;
-    }
-    
-    .menu-header {
-      top: 3rem;
-      left: 4rem;
-      right: 4rem;
-    }
+
     
     .dropdown-navigation {
       margin-right: 4rem;
@@ -544,19 +534,11 @@
   }
   
   @media (min-width: 1024px) {
-    .dropdown-menu-content {
-      padding: 0rem 6rem;
-    }
-    
+
     .menu-header {
       top: 4rem;
-      left: 6rem;
-      right: 6rem;
     }
     
-    .dropdown-navigation {
-      margin-right: 6rem;
-    }
     
     .dropdown-nav-menu li a {
       font-size: rem;
@@ -564,15 +546,9 @@
   }
   
   @media (max-width: 768px) {
-    .dropdown-menu-content {
-      padding: 1.5rem;
-      align-items: flex-start;
-    }
     
     .menu-header {
       top: 1.5rem;
-      left: 1.5rem;
-      right: 1.5rem;
     }
     
     .dropdown-navigation {
@@ -591,9 +567,6 @@
   }
   
   @media (max-width: 480px) {
-    .dropdown-menu-content {
-      padding: 1rem;
-    }
     
     .menu-logo a {
       font-size: 1.3rem;

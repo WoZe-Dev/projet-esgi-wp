@@ -26,12 +26,6 @@
     margin-left: auto;
 }
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 .contact-info h4 {
     margin-bottom: 1rem;
 }

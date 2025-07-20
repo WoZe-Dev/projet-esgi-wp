@@ -3,16 +3,27 @@
 $args = [
     'post_type' => 'post', // valeur par défaut
 ];
-$posts = get_posts($args); // Récupération de tous les résultats
+$recent_posts = get_posts($args); // Récupération de tous les résultats
 // echo '<pre>';
-// var_dump($posts);
+// var_dump($recent_posts);
 ?>
-<div>
-    <ul class="post-list">
-        <?php foreach ($posts as $post) { ?>
+<div class="post-list">
+    <h6>Recent Posts</h6>
+    <ul>
+        <?php foreach ($recent_posts as $recent_post) { ?>
             <li>
-                <a href="<?= get_permalink($post) ?>"><?= $post->post_title ?> <time><?= wp_date('j F Y', strtotime($post->post_date)) ?></time> </a>
+                <a href="<?= get_permalink($recent_post) ?>">
+                    <img src="<?= get_the_post_thumbnail_url($recent_post, 'thumbnail'); ?>" alt="">
+                </a>
+                <div>
+                    <a href="<?= get_permalink($recent_post) ?>"><?= $recent_post->post_title ?></a><br>
+                    <time><?= wp_date('j F Y', strtotime($recent_post->post_date)) ?></time>
+                </div>
             </li>
         <?php } ?>
     </ul>
 </div>
+<?php
+// Reset global $post object to ensure other template functions work correctly
+wp_reset_postdata();
+?>

@@ -1,9 +1,14 @@
 p {
-    grid-column: 1 / span 7;
-    margin-bottom: ;
+    grid-column: span 12;
 }
 
 #corp-parties-picture {
     width: 100%;
     transform: translateY(5px);
+}
+
+@media screen and (min-width: 1024px) {
+    p,h2 {
+    grid-column: span 7;
+    }
 }

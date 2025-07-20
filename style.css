@@ -9,6 +9,13 @@
   --menu-text: #ffffff;
   --accent-color: #ff6b9d;
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  /* Breakpoints */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1600px;
 }
 
 * {
@@ -16,15 +23,18 @@
   margin: 0;
   padding: 0;
 }
+body {
+  font-family: "Mulish", sans-serif;
+  padding: 0;
+  margin: 0;
+}
 
 main {
   margin-top: 76px;
 }
 
-body {
-  font-family: "Mulish", sans-serif;
-  padding: 0;
-  margin: 0;
+.single-page {
+  margin-bottom: 130px;
 }
 
 p {
@@ -33,10 +43,15 @@ p {
   color: var(--text-color);
   line-height: 42px;
 }
+small {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-color);
+}
 
 h1,
 h2,
-h3,h4 {
+h3,h4,h6 {
   color: var(--primary-color);
 }
 
@@ -62,6 +77,12 @@ font-weight: 600;
 font-size: 35px;
 }
 
+h6,h5 {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 27px;
+}
+
 .container {
   width: 100%;
   max-width: 1600px;
@@ -73,23 +94,15 @@ font-size: 35px;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-}
-
-.text-large {
-  font-family: "Muli", sans-serif;
-  font-size: 4.25rem;
-  color: #050a3a;
-  width: 72.25rem;
-}
-
-.text-description {
-  width: 30.125rem;
-  color: #8a8a8a;
-  font-family: "Muli", sans-serif;
-  font-size: 1.625rem;
-  line-height: 2.625rem;
+    gap: 50px;
 }
 
 .template-part {
   margin-bottom: 130px;
+}
+
+@media screen and (max-width: 1600px) {
+  .container {
+    padding: 0 2rem;
+  }
 }
