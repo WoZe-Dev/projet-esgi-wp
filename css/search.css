@@ -33,6 +33,69 @@
 }
 
 
+/* ---------- Heading (“Search”) ---------- */
+.sidebar-heading {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #080e2c;
+    margin-bottom: 0;
+}
+
+/* ---------- Container ---------- */
+.search-box .search-form {
+  margin-top: 1rem;
+  margin-bottom: 2.4rem;
+}
+
+/* ---------- Form wrapper ---------- */
+.search-form {
+  position: relative;       
+}
+
+.search-field {
+  width: 100%;
+  padding: 0.5rem 3rem 0.5rem 0;
+  font-family: inherit;
+  font-size: 20px;              
+  font-weight: 400;
+  color: #080e2c;
+  border: none;
+  border-bottom: 2px solid #d9d9d9;
+  background: transparent;
+}
+
+.search-field::placeholder {
+  color: #9b9b9b;               
+  font-weight: 500;
+}
+
+/* ---------- Submit button ---------- */
+.search-submit {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.search-submit:hover,
+.search-submit:focus-visible {
+  opacity: 0.75;
+  outline: none;
+}
+
+/* Remove default button text while keeping accessible label */
+.search-submit::-moz-focus-inner { border: 0; }   /* Firefox fix */
+.search-submit img { display: block; }
+
+
+
 @media screen and (min-width: 1024px) {
     .post-content {
         grid-column: span 4;

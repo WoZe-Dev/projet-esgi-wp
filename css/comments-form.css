@@ -1,0 +1,118 @@
+/* ---------- Comment section ---------- */
+
+.comments-area {
+  margin-top: 4rem;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  color: #080e2c;
+}
+
+.comments-area h2,
+.comment-reply-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* list wrapper */
+.comment-list {
+  list-style: none;
+  margin: 0 0 3rem 0;
+  padding: 0;
+}
+
+/* single comment */
+.comment-box {
+  background: #f6f6f6;
+  border-radius: 4px;
+  padding: 2rem;
+}
+
+.comment-box + .comment-box {
+  margin-top: 2rem;
+}
+
+/* author */
+.comment-author {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin: 0 0 1rem 0;
+}
+
+/* text */
+.comment-content {
+  line-height: 1.6;
+  max-width: 65ch;
+  margin-bottom: 1.5rem;
+}
+
+/* reply link */
+.reply-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--main-color, #080e2c);
+  text-decoration: none;
+}
+
+.reply-link:hover {
+  text-decoration: underline;
+}
+
+/* arrow icon (uses ≪ Unicode if no icon font) */
+.reply-link .reply-icon::before {
+  content: "\00AB";
+  font-size: 0.75rem;
+  transform: translateY(-1px);
+}
+
+/* ---------- Reply form ---------- */
+
+.comment-form-ui {
+  margin-top: 4rem;
+}
+
+.comment-form-ui p {
+  margin-bottom: 1.75rem;
+}
+
+.comment-form-ui label {          /* hide default labels */
+  display: none;
+}
+
+.comment-form-ui input[type="text"],
+.comment-form-ui input[type="email"],
+.comment-form-ui textarea {
+  width: 100%;
+  padding: 0.75rem 0;
+  border: none;
+  border-bottom: 1px solid #e2e2e2;
+  background: transparent;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.comment-form-ui input::placeholder,
+.comment-form-ui textarea::placeholder {
+  color: #8f8f8f;
+  font-weight: 500;
+}
+
+.comment-form-ui .form-submit {
+  margin-top: 2.5rem;
+}
+
+.comment-form-ui .button-submit {
+  background: none;
+  border: none;
+  color: #080e2c;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.comment-form-ui .button-submit:hover {
+  opacity: 0.75;
+}
