@@ -2,8 +2,9 @@
 
 <main>
     <div class="container">
-        <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
+        <?php if (have_posts()): ?>
+            <?php while (have_posts()):
+                the_post(); ?>
                 <article>
                     <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     <div class="post-meta">
@@ -15,9 +16,9 @@
                     </div>
                 </article>
             <?php endwhile; ?>
-            
+
             <?php the_posts_pagination(); ?>
-        <?php else : ?>
+        <?php else: ?>
             <p>No posts found.</p>
         <?php endif; ?>
     </div>

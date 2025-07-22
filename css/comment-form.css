@@ -1,0 +1,149 @@
+/* ---------- Wrapper & heading ---------- */
+
+.comments-area {
+  margin-top: 4rem;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  color: #080e2c;        /* very-dark navy from your palette  */
+}
+
+.comments-area h2,
+.comment-reply-title {
+  font-size: 20px;               /* ← the “20 px” you asked for   */
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* ---------- Comment list ---------- */
+
+.comment-list {
+  list-style: none;
+  margin: 0 0 3rem 0;
+  padding: 0;
+}
+
+/* single comment block */
+.comment-box {
+  background: #f6f6f6;
+  border-radius: 4px;
+  padding: 2rem;
+}
+
+.comment-box + .comment-box {     /* vertical gap between comments */
+  margin-top: 2rem;
+}
+
+/* author line */
+.comment-author {
+    color: var(--primary-color);
+  font-weight: 700;
+  font-size: 20px;               /* same 20 px so name = heading   */
+  margin: 0 0 1rem 0;
+}
+
+/* main text */
+.comment-content p {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 65ch;
+  margin-bottom: 1.5rem;
+}
+
+/* reply link */
+.comment-reply-link {
+    color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 14px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.comment-reply-link:hover {
+  text-decoration: underline;
+}
+
+/* little “↩︎” arrow */
+.comment-reply-link .reply-icon::before {
+  content: "\00AB";
+  font-size: 0.75rem;
+  transform: translateY(-1px);
+}
+
+/* ---------- Reply form ---------- */
+
+.comment-form-ui {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-form-ui p {
+  margin-bottom: 1rem;
+}
+
+.comment-form-ui label {          /* hide default labels */
+  display: none;
+}
+
+.comment-form-ui input[type="text"],
+.comment-form-ui input[type="email"],
+.comment-form-ui textarea {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  border: none;
+  border-bottom: 2px solid #e2e2e2;
+  background: transparent;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.comment-form-ui input::placeholder,
+.comment-form-ui textarea::placeholder {
+  color: #8f8f8f;
+  font-weight: 500;
+}
+
+.comment-form-ui .form-submit {
+    order: 3;
+    background-color: transparent;
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+}
+
+.comment-form-ui .button-submit {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.comment-form-ui .button-submit:hover {
+  opacity: 0.75;
+}
+
+.comment-form-ui .logged-in-as {
+  font-size: 14px;
+  color: #666;
+}
+
+.comment-form-cookies-consent,
+#email-notes,
+.required-field-message {
+  display: none;
+}
+
+/* put the author (name) input first … */
+.comment-form-author { order: 1; }
+
+/* …and the textarea second */
+.comment-form-comment { order: 2; }
+
