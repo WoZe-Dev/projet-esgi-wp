@@ -4,8 +4,9 @@ get_header();
 
 <main class="single-page">
     <div class="container">
-        <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
+        <?php if (have_posts()): ?>
+            <?php while (have_posts()):
+                the_post(); ?>
                 <h1><?php the_title() ?>.</h1>
 
                 <div class="grid">
@@ -28,11 +29,13 @@ get_header();
                         <!-- CONTENT -->
                         <div>
                             <?php the_content(); ?>
+                            <!-- // COMMENTS -->
+
+                            <?php comments_template(); ?>
                         </div>
+
                     </div>
                 </div>
-                <!-- COMMENTS SECTION -->
-                <?php comments_template(); ?>
 
             <?php endwhile; ?>
         <?php endif; ?>

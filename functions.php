@@ -5,7 +5,7 @@ function esgi_register_nav_menu()
 {
     register_nav_menus(array(
         'primary_menu' => __('Primary Menu', 'ESGI'),
-        'footer_menu'  => __('Footer Menu', 'ESGI'),
+        'footer_menu' => __('Footer Menu', 'ESGI'),
     ));
 }
 
@@ -445,7 +445,8 @@ add_filter('script_loader_src', 'add_cache_busting_version');
 add_action('wp_head', 'add_no_cache_headers');
 function add_no_cache_headers()
 {
-    if (!is_user_logged_in()) return;
+    if (!is_user_logged_in())
+        return;
 
     echo '<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">';
     echo '<meta http-equiv="Pragma" content="no-cache">';
@@ -515,3 +516,73 @@ function show_cache_cleared_notice()
         echo '<div class="notice notice-success is-dismissible"><p>Cache vidé avec succès!</p></div>';
     }
 }
+
+
+
+/* 
+ *  Custom markup for ONE comment — matches the Figma / screenshot
+ */
+if (!function_exists('esgi_comment_markup')) {
+    function esgi_comment_markup($comment, $args, $depth)
+    {
+        $tag = ('div' === $args['style']) ? 'div' : 'li';  // keep WP happy if someone switches to 'div'
+        ?>
+        <<?php echo esc_html($tag); ?>         <?php comment_class('comment-box'); ?> id="comment-<?php comment_ID(); ?>">
+
+            <p class="comment-author"><?php comment_author(); ?></p>
+
+            <div class="comment-content">
+                <?php comment_text(); ?>
+            </div>
+
+            <?php
+            comment_reply_link(
+                array_merge(
+                    $args,
+                    [
+                        'add_below' => 'comment',
+                        'depth' => $depth,
+                        'max_depth' => $args['max_depth'],
+                        'reply_text' => '<span class="reply-icon"></span> ' . __('Reply', 'projet-esgi-wp'),
+                        'class' => 'reply-link',
+                    ]
+                )
+            );
+            ?>
+        </<?php echo esc_html($tag); ?>>
+        <?php
+    }
+}
+
+/*
+ * Polish the comment form placeholders / classes so they match the mock-up
+ */
+add_filter('comment_form_defaults', function ($d) {
+
+    /* --- rename & slim down the author field --- */
+    $d['fields']['author'] =
+        '<p class="comment-form-author">
+			<input id="author" name="author" type="text"
+			       placeholder="' . esc_attr__('Full name', 'projet-esgi-wp') . '" required>
+		</p>';
+
+    /* --- drop the website field; keep e-mail (WP needs it) but you can hide with CSS --- */
+    unset($d['fields']['url']);
+
+    /* --- swap the big textarea --- */
+    $d['comment_field'] =
+        '<p class="comment-form-comment">
+			<textarea id="comment" name="comment" rows="5"
+			          placeholder="' . esc_attr__('Message', 'projet-esgi-wp') . '" required></textarea>
+		</p>';
+
+    /* --- headings & button label --- */
+    $d['title_reply'] = __('Leave a reply', 'projet-esgi-wp');
+    $d['label_submit'] = __('Submit', 'projet-esgi-wp');
+
+    /* --- extra classes we reference in comment-form.css --- */
+    $d['class_form'] = 'comment-form-ui';
+    $d['class_submit'] = 'button-submit';
+
+    return $d;
+});
