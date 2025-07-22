@@ -515,3 +515,328 @@ function show_cache_cleared_notice()
         echo '<div class="notice notice-success is-dismissible"><p>Cache vidé avec succès!</p></div>';
     }
 }
+
+// Créer les pages par défaut si elles n'existent pas
+function esgi_create_default_pages() {
+    $pages = array(
+        array(
+            'title' => 'About Us',
+            'slug' => 'about-us',
+            'content' => '<h1>About Us</h1><p>Learn more about our company and team.</p>[about_us_section]',
+            'template' => 'page-about-us.php'
+        ),
+        array(
+            'title' => 'Services',
+            'slug' => 'services',
+            'content' => '<h1>Our Services</h1><p>Discover the services we offer.</p>[services_section]',
+            'template' => 'page-services.php'
+        ),
+        array(
+            'title' => 'Partners',
+            'slug' => 'partners',
+            'content' => '<h1>Our Partners</h1><p>Meet our trusted partners.</p>[partners_section]',
+            'template' => 'page.php'
+        ),
+        array(
+            'title' => 'Blog',
+            'slug' => 'blog',
+            'content' => '<h1>Blog</h1><p>Welcome to our blog section.</p>',
+            'template' => 'page-blog.php'
+        ),
+        array(
+            'title' => 'Contact',
+            'slug' => 'contact',
+            'content' => '<h1>Contact Us</h1><p>Get in touch with us.</p>[contact_form]',
+            'template' => 'page-contact.php'
+        )
+    );
+    
+    $created_pages = array();
+    
+    foreach ($pages as $page_data) {
+        // Vérifier si la page existe déjà
+        $page = get_page_by_path($page_data['slug']);
+        
+        if (!$page) {
+            // Créer la page
+            $page_id = wp_insert_post(array(
+                'post_title' => $page_data['title'],
+                'post_name' => $page_data['slug'],
+                'post_content' => $page_data['content'],
+                'post_status' => 'publish',
+                'post_type' => 'page',
+                'post_author' => 1
+            ));
+            
+            if ($page_id && !is_wp_error($page_id)) {
+                // Assigner le template si spécifié
+                if (isset($page_data['template'])) {
+                    update_post_meta($page_id, '_wp_page_template', $page_data['template']);
+                }
+                
+                $created_pages[$page_data['slug']] = $page_id;
+            }
+        } else {
+            $created_pages[$page_data['slug']] = $page->ID;
+        }
+    }
+    
+    return $created_pages;
+}
+
+// Fonction améliorée pour créer le menu par défaut avec liens vers les vraies pages
+function esgi_create_default_menu() {
+    // D'abord créer les pages
+    $pages = esgi_create_default_pages();
+    
+    // Vérifier si le menu principal existe déjà
+    $menu_name = 'Menu Principal';
+    $menu_exists = wp_get_nav_menu_object($menu_name);
+    
+    if (!$menu_exists) {
+        // Créer le menu
+        $menu_id = wp_create_nav_menu($menu_name);
+        
+        // Définir les éléments du menu en liant aux vraies pages
+        $menu_items = array(
+            array(
+                'title' => 'HOME',
+                'type' => 'custom',
+                'url' => home_url('/'),
+                'menu_order' => 1
+            ),
+            array(
+                'title' => 'About Us',
+                'type' => 'post_type',
+                'object' => 'page',
+                'object_id' => isset($pages['about-us']) ? $pages['about-us'] : null,
+                'url' => home_url('/about-us/'),
+                'menu_order' => 2
+            ),
+            array(
+                'title' => 'Services',
+                'type' => 'post_type',
+                'object' => 'page',
+                'object_id' => isset($pages['services']) ? $pages['services'] : null,
+                'url' => home_url('/services/'),
+                'menu_order' => 3
+            ),
+            array(
+                'title' => 'Partners',
+                'type' => 'post_type',
+                'object' => 'page',
+                'object_id' => isset($pages['partners']) ? $pages['partners'] : null,
+                'url' => home_url('/partners/'),
+                'menu_order' => 4
+            ),
+            array(
+                'title' => 'Blog',
+                'type' => 'post_type',
+                'object' => 'page',
+                'object_id' => isset($pages['blog']) ? $pages['blog'] : null,
+                'url' => home_url('/blog/'),
+                'menu_order' => 5
+            ),
+            array(
+                'title' => 'Contact',
+                'type' => 'post_type',
+                'object' => 'page',
+                'object_id' => isset($pages['contact']) ? $pages['contact'] : null,
+                'url' => home_url('/contact/'),
+                'menu_order' => 6
+            )
+        );
+        
+        // Ajouter chaque élément au menu
+        foreach ($menu_items as $item) {
+            $menu_item_args = array(
+                'menu-item-title' => $item['title'],
+                'menu-item-status' => 'publish',
+                'menu-item-type' => $item['type'],
+                'menu-item-position' => $item['menu_order']
+            );
+            
+            // Si c'est une page, ajouter l'ID de la page
+            if ($item['type'] === 'post_type' && $item['object_id']) {
+                $menu_item_args['menu-item-object'] = $item['object'];
+                $menu_item_args['menu-item-object-id'] = $item['object_id'];
+            } else {
+                // Pour les liens personnalisés
+                $menu_item_args['menu-item-url'] = $item['url'];
+            }
+            
+            wp_update_nav_menu_item($menu_id, 0, $menu_item_args);
+        }
+        
+        // Assigner le menu à l'emplacement 'primary_menu'
+        $locations = get_theme_mod('nav_menu_locations');
+        if (!is_array($locations)) {
+            $locations = array();
+        }
+        $locations['primary_menu'] = $menu_id;
+        set_theme_mod('nav_menu_locations', $locations);
+        
+        return $menu_id;
+    }
+    
+    return $menu_exists->term_id;
+}
+
+// Hook pour l'activation du thème
+function esgi_theme_activation() {
+    // Créer les pages par défaut
+    $pages = esgi_create_default_pages();
+    
+    // Créer et assigner le menu par défaut
+    $menu_id = esgi_create_default_menu();
+    
+    // Vider le cache
+    if (function_exists('wp_cache_flush')) {
+        wp_cache_flush();
+    }
+    
+    // Enregistrer un flag pour indiquer que l'initialisation est terminée
+    update_option('esgi_theme_initialized', true);
+    
+    // Message de confirmation (sera affiché dans l'admin)
+    add_action('admin_notices', function() {
+        echo '<div class="notice notice-success is-dismissible">';
+        echo '<p><strong>Thème ESGI activé avec succès!</strong></p>';
+        echo '<p>✅ Pages créées automatiquement<br>';
+        echo '✅ Menu principal créé et assigné<br>';
+        echo '✅ Emplacement "Primary Menu" activé</p>';
+        echo '<p>Vous pouvez maintenant personnaliser votre menu dans <a href="' . admin_url('nav-menus.php') . '">Apparence → Menus</a></p>';
+        echo '</div>';
+    });
+}
+
+// Exécuter lors du changement de thème
+add_action('after_switch_theme', 'esgi_theme_activation');
+
+// Fonction pour restaurer le menu par défaut (version améliorée)
+function esgi_restore_menu_page() {
+    if (isset($_POST['restore_menu']) && wp_verify_nonce($_POST['_wpnonce'], 'esgi_restore_menu')) {
+        // Supprimer l'ancien menu s'il existe
+        $old_menu = wp_get_nav_menu_object('Menu Principal');
+        if ($old_menu) {
+            wp_delete_nav_menu($old_menu->term_id);
+        }
+        
+        // Créer un nouveau menu par défaut
+        esgi_create_default_menu();
+        
+        echo '<div class="notice notice-success"><p><strong>Menu par défaut restauré avec succès!</strong><br>Pages et liens recréés automatiquement.</p></div>';
+    }
+    
+    ?>
+    <div class="wrap">
+        <h1>Restaurer le Menu ESGI par défaut</h1>
+        <p>Cette action va supprimer le menu actuel et recréer le menu par défaut avec tous les éléments liés aux bonnes pages.</p>
+        
+        <div class="card">
+            <h2>Menu par défaut inclut :</h2>
+            <ul>
+                <li>🏠 <strong>HOME</strong> - Lien vers l'accueil</li>
+                <li>📄 <strong>About Us</strong> - Page "About Us" (slug: about-us)</li>
+                <li>🔧 <strong>Services</strong> - Page "Services" (slug: services)</li>
+                <li>🤝 <strong>Partners</strong> - Page "Partners" (slug: partners)</li>
+                <li>📝 <strong>Blog</strong> - Page "Blog" (slug: blog)</li>
+                <li>📞 <strong>Contact</strong> - Page "Contact" (slug: contact)</li>
+            </ul>
+        </div>
+        
+        <form method="post">
+            <?php wp_nonce_field('esgi_restore_menu'); ?>
+            <p>
+                <input type="submit" name="restore_menu" class="button button-primary" 
+                       value="Restaurer le Menu par défaut" 
+                       onclick="return confirm('Êtes-vous sûr de vouloir restaurer le menu par défaut ? Cette action supprimera le menu actuel et recréera les pages si nécessaire.');">
+            </p>
+        </form>
+        
+        <h2>Instructions d'utilisation :</h2>
+        <ul>
+            <li><strong>Activation automatique :</strong> Le menu se crée automatiquement lors de l'activation du thème</li>
+            <li><strong>Personnalisation :</strong> Vous pouvez modifier, ajouter ou supprimer des éléments dans <a href="<?php echo admin_url('nav-menus.php'); ?>">Apparence → Menus</a></li>
+            <li><strong>Emplacement :</strong> Le menu est automatiquement assigné à "Primary Menu"</li>
+            <li><strong>Pages :</strong> Les pages sont créées automatiquement avec les bons templates</li>
+        </ul>
+    </div>
+    <?php
+}
+
+// Fonction pour forcer le vidage du cache après modification du menu
+function esgi_clear_menu_cache() {
+    // Vider tous les caches
+    wp_cache_flush();
+    
+    // Vider le cache des menus spécifiquement
+    wp_cache_delete('menu_items', 'nav_menu');
+    
+    // Forcer une nouvelle version des assets
+    update_option('esgi_cache_version', time());
+    
+    // Vider les transients de menu
+    global $wpdb;
+    $wpdb->query("DELETE FROM {$wpdb->options} WHERE option_name LIKE '_transient_menu_%'");
+}
+
+// Hook pour vider le cache après modification de menu
+add_action('wp_update_nav_menu', 'esgi_clear_menu_cache');
+add_action('wp_delete_nav_menu', 'esgi_clear_menu_cache');
+
+// Ajouter les options de menu dans l'admin
+add_action('admin_menu', 'esgi_add_menu_restore_option');
+function esgi_add_menu_restore_option() {
+    add_submenu_page(
+        'themes.php',
+        'Restaurer Menu ESGI',
+        'Restaurer Menu ESGI',
+        'manage_options',
+        'esgi-restore-menu',
+        'esgi_restore_menu_page'
+    );
+}
+
+add_action('admin_menu', 'esgi_add_clear_menu_cache_option');
+function esgi_add_clear_menu_cache_option() {
+    add_submenu_page(
+        'nav-menus.php',
+        'Vider Cache Menu',
+        'Vider Cache Menu',
+        'manage_options',
+        'esgi-clear-menu-cache',
+        'esgi_clear_menu_cache_page'
+    );
+}
+
+function esgi_clear_menu_cache_page() {
+    if (isset($_POST['clear_cache']) && wp_verify_nonce($_POST['_wpnonce'], 'esgi_clear_cache')) {
+        esgi_clear_menu_cache();
+        echo '<div class="notice notice-success"><p>Cache des menus vidé avec succès!</p></div>';
+    }
+    
+    ?>
+    <div class="wrap">
+        <h1>Vider le Cache des Menus</h1>
+        <p>Si vos modifications de menu n'apparaissent pas sur le site, videz le cache.</p>
+        
+        <form method="post">
+            <?php wp_nonce_field('esgi_clear_cache'); ?>
+            <p>
+                <input type="submit" name="clear_cache" class="button button-primary" 
+                       value="Vider le Cache des Menus">
+            </p>
+        </form>
+        
+        <h2>Causes possibles :</h2>
+        <ul>
+            <li><strong>Cache WordPress :</strong> Les menus sont mis en cache pour améliorer les performances</li>
+            <li><strong>Cache navigateur :</strong> Votre navigateur peut afficher une version en cache</li>
+            <li><strong>Plugin de cache :</strong> Si vous utilisez un plugin de cache, videz-le aussi</li>
+        </ul>
+        
+        <p><strong>Astuce :</strong> Après avoir modifié un menu, faites Ctrl+F5 dans votre navigateur pour forcer le rechargement.</p>
+    </div>
+    <?php
+}
