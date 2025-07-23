@@ -1,7 +1,10 @@
 .post-list {
-    grid-column: 1 /span 4;
+    grid-column: span 12;
 }
-
+.post-list form {
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+}
 .post-list div {
     height: fit-content;
 }
@@ -34,4 +37,10 @@
 height: 100%;
 aspect-ratio: 1/1;
     object-fit: cover;
+}
+
+@media screen  and (min-width: 1024px) {
+    .post-list {
+        grid-column: 1 / span 4;
+    }
 }

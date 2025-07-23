@@ -7,7 +7,16 @@ $recent_posts = get_posts($args); // Récupération de tous les résultats
 // echo '<pre>';
 // var_dump($recent_posts);
 ?>
+
+
 <div class="post-list">
+    <h6>Search</h6>
+    <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
+        <input type="search" class="search-field" placeholder="Type to search" value="<?php echo get_search_query(); ?>" name="s" />
+        <button type="submit" class="search-submit" value="Search">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/search-icon.svg" alt="search icon">
+        </button>
+    </form>
     <h6>Recent Posts</h6>
     <ul>
         <?php foreach ($recent_posts as $recent_post) { ?>

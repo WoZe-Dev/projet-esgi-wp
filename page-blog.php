@@ -8,7 +8,7 @@ get_header(); ?>
 <main class="blog-page container">
     <h1><?php the_title() ?>.</h1>
     <div class="grid">
-        <?php get_template_part('template-parts/post-list'); ?>
+          <?php get_template_part('template-parts/post-list'); ?>
         <div class="blog-content">
             <?php
             // Custom query to get blog posts
@@ -70,6 +70,7 @@ get_header(); ?>
             wp_reset_postdata();
             ?>
         </div>
+      
     </div>
 </main>
 
