@@ -1,71 +1,67 @@
-/* ---------- Wrapper & heading ---------- */
+/* ---------- Comment section ---------- */
 
 .comments-area {
   margin-top: 4rem;
   font-family: 'Inter', 'Poppins', sans-serif;
-  color: #080e2c;        /* very-dark navy from your palette  */
+  color: #080e2c;
 }
 
 .comments-area h2,
 .comment-reply-title {
-  font-size: 20px;               /* ← the “20 px” you asked for   */
+  font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 2rem;
 }
 
-/* ---------- Comment list ---------- */
-
+/* list wrapper */
 .comment-list {
   list-style: none;
   margin: 0 0 3rem 0;
   padding: 0;
 }
 
-/* single comment block */
+/* single comment */
 .comment-box {
   background: #f6f6f6;
   border-radius: 4px;
   padding: 2rem;
 }
 
-.comment-box + .comment-box {     /* vertical gap between comments */
+.comment-box + .comment-box {
   margin-top: 2rem;
 }
 
-/* author line */
+/* author */
 .comment-author {
-    color: var(--primary-color);
   font-weight: 700;
-  font-size: 20px;               /* same 20 px so name = heading   */
+  font-size: 1.125rem;
   margin: 0 0 1rem 0;
 }
 
-/* main text */
-.comment-content p {
-  font-size: 20px;
+/* text */
+.comment-content {
   line-height: 1.6;
   max-width: 65ch;
   margin-bottom: 1.5rem;
 }
 
 /* reply link */
-.comment-reply-link {
-    color: var(--primary-color);
+.reply-link {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
   font-weight: 600;
-  font-size: 14px;
-  color: inherit;
+  font-size: 0.875rem;
+  color: var(--main-color, #080e2c);
   text-decoration: none;
 }
 
-.comment-reply-link:hover {
+.reply-link:hover {
   text-decoration: underline;
 }
 
-/* little “↩︎” arrow */
-.comment-reply-link .reply-icon::before {
+/* arrow icon (uses ≪ Unicode if no icon font) */
+.reply-link .reply-icon::before {
   content: "\00AB";
   font-size: 0.75rem;
   transform: translateY(-1px);
@@ -75,12 +71,10 @@
 
 .comment-form-ui {
   margin-top: 4rem;
-  display: flex;
-  flex-direction: column;
 }
 
 .comment-form-ui p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .comment-form-ui label {          /* hide default labels */
@@ -91,11 +85,11 @@
 .comment-form-ui input[type="email"],
 .comment-form-ui textarea {
   width: 100%;
-  padding: 0.75rem 0.5rem;
+  padding: 0.75rem 0;
   border: none;
-  border-bottom: 2px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
   background: transparent;
-  font-size: 16px;
+  font-size: 1rem;
   resize: vertical;
 }
 
@@ -106,22 +100,15 @@
 }
 
 .comment-form-ui .form-submit {
-    order: 3;
-    background-color: transparent;
-    color: var(--primary-color);
-    font-weight: 800;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    width: 100px;
+  margin-top: 2.5rem;
 }
 
 .comment-form-ui .button-submit {
   background: none;
   border: none;
-  color: var(--primary-color);
+  color: #080e2c;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   padding: 0;
 }
@@ -129,21 +116,3 @@
 .comment-form-ui .button-submit:hover {
   opacity: 0.75;
 }
-
-.comment-form-ui .logged-in-as {
-  font-size: 14px;
-  color: #666;
-}
-
-.comment-form-cookies-consent,
-#email-notes,
-.required-field-message {
-  display: none;
-}
-
-/* put the author (name) input first … */
-.comment-form-author { order: 1; }
-
-/* …and the textarea second */
-.comment-form-comment { order: 2; }
-
