@@ -1,5 +1,3 @@
-/* Blog Styles */
-
 /* Blog Page Layout */
 .blog-page,
 .blog-home {
@@ -8,7 +6,7 @@
 }
 
 .blog-content {
-    grid-column: 5 /span 8;
+    grid-column: 1 /span 12;
 }
 
 .blog-header,
@@ -291,4 +289,10 @@
         font-size: 1.5rem;
     }
     
+}
+
+@media screen and (min-width: 1024px) {
+    .blog-content {
+        grid-column: 5 / span 8;
+    }
 }
