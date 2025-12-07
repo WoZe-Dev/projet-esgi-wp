@@ -1,0 +1,16 @@
+{
+  "name": "01-starter",
+  "version": "1.0.0",
+  "description": "Installation de [nvm](https://github.com/nvm-sh/nvm) ou [nvm-windows](https://github.com/coreybutler/nvm-windows)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/bonjour.js",
+    "build": "tsc",
+    "dev": "npm run build && npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
